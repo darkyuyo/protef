@@ -13,7 +13,7 @@ import { site, whatsappHref } from "@/lib/site.config";
 export function LandingRubro({ landing }: { landing: Landing }) {
   const crumbs = [
     { name: "Inicio", path: "/" },
-    { name: "Servicios", path: "/#rubros" },
+    { name: "Servicios", path: "/servicios" },
     { name: landing.h1, path: landing.path },
   ];
   const related = relatedServices(landing.id);

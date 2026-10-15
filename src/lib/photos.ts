@@ -13,6 +13,17 @@ export const aboutPhoto: Photo = {
   alt: "Técnico revisando el gabinete de equipos de un edificio",
 };
 
+export const homePhotos = {
+  edificio: {
+    src: "/fotos/fondo-edificio.jpg",
+    alt: "Edificio de departamentos con portón metálico y una cámara en el acceso",
+  },
+  noche: {
+    src: "/fotos/equipo-nocturno.jpg",
+    alt: "Acceso de un condominio iluminado al anochecer, con portón y cámara",
+  },
+} as const satisfies Record<string, Photo>;
+
 const servicePhotos: Record<string, Photo> = {
   cctv: {
     src: "/fotos/cctv.webp",

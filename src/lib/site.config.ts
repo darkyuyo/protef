@@ -167,7 +167,7 @@ export const services: Service[] = [
 export const nav = [
   { href: "/", label: "Inicio" },
   { href: "/nosotros", label: "Quiénes somos" },
-  { href: "/#rubros", label: "Servicios" },
+  { href: "/servicios", label: "Servicios" },
   { href: "/mantencion", label: "Mantención" },
   { href: "/planes", label: "Planes" },
   { href: "/contacto", label: "Contacto" },
@@ -295,6 +295,12 @@ export const pageMeta = {
     description:
       "Servicio técnico de seguridad electrónica en Concepción. CCTV, cercos SEC y portones. Urgencia de lunes a viernes. Llame al +56 9 8210 9253.",
   },
+  servicios: {
+    path: "/servicios",
+    title: "Servicios de seguridad electrónica en Concepción | PROTEF",
+    description:
+      "CCTV, cercos eléctricos SEC, portones, citófonos, acceso biométrico y alarmas de incendio en Concepción. Vea los sistemas y llame al +56 9 8210 9253.",
+  },
   nosotros: {
     path: "/nosotros",
     title: "Quiénes somos | PROTEF desde 1995",
@@ -335,6 +341,7 @@ export const pageMeta = {
 
 export const indexablePaths = [
   pageMeta.home.path,
+  pageMeta.servicios.path,
   pageMeta.nosotros.path,
   pageMeta.mantencion.path,
   pageMeta.planes.path,

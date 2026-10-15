@@ -113,6 +113,15 @@ html[data-consent] .cookie-banner {
     linear-gradient(135deg, #051c38 0%, #0a4d7a 52%, #0077b6 100%);
 }
 
+.hero-veil {
+  background: linear-gradient(
+    105deg,
+    rgba(5, 28, 56, 0.84) 0%,
+    rgba(8, 72, 122, 0.68) 42%,
+    rgba(0, 110, 170, 0.5) 100%
+  );
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .hero-item {
     animation: hero-in 0.55s ease both;
