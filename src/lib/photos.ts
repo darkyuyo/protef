@@ -13,6 +13,49 @@ export const aboutPhoto: Photo = {
   alt: "Técnico revisando el gabinete de equipos de un edificio",
 };
 
+export const brandLogo: Photo = {
+  src: "/protef.jpg",
+  alt: "Logo PROTEF: escudo con casa y candado, y los rubros CCTV, alarmas, cercos eléctricos, portones automáticos y control de acceso",
+};
+
+export type TeamPhoto = Photo & {
+  caption: string;
+  focus: string;
+};
+
+export const teamPhotos: TeamPhoto[] = [
+  {
+    src: "/fotos/equipo/equipo-porton-acceso.png",
+    alt: "Dos técnicos de PROTEF instalando un portón: uno en la escalera y otro arrodillado junto al motor",
+    caption: "Instalación del portón",
+    focus: "center center",
+  },
+  {
+    src: "/fotos/equipo/escalera-furgon.jpg",
+    alt: "Técnico de PROTEF subiendo materiales a la furgoneta frente al portón de un condominio",
+    caption: "Materiales en el acceso",
+    focus: "28% center",
+  },
+  {
+    src: "/fotos/equipo/motor-porton.jpg",
+    alt: "Técnico arrodillado instalando el motor de un portón corredero",
+    caption: "Motor del portón",
+    focus: "center 28%",
+  },
+  {
+    src: "/fotos/equipo/cableado-motor.jpg",
+    alt: "Técnico conectando los cables del automatismo de un portón",
+    caption: "Cableado del automatismo",
+    focus: "center 30%",
+  },
+  {
+    src: "/fotos/equipo/conexion-motor.jpg",
+    alt: "Técnico revisando la conexión del motor junto al riel del portón",
+    caption: "Puesta en marcha",
+    focus: "center 32%",
+  },
+];
+
 export const pagePhotos = {
   servicios: {
     src: "/fotos/vista-servicios.jpg",

@@ -121,12 +121,6 @@ export default function HomePage() {
             <p className="text-sm font-extrabold tracking-wide text-brand-dark uppercase">
               Qué reparamos
             </p>
-            <h2
-              id="sistemas-titulo"
-              className="mt-2 max-w-2xl text-[clamp(1.7rem,3vw,2.4rem)] leading-tight font-extrabold text-nav"
-            >
-              Seis sistemas. Un teléfono.
-            </h2>
           </div>
           <Link
             href="/servicios"
