@@ -90,7 +90,6 @@ export function serviceGraph(input: {
   name: string;
   description: string;
   crumbs: Crumb[];
-  faqs: { question: string; answer: string }[];
 }) {
   const url = canonicalUrl(input.path);
   return {
@@ -106,14 +105,6 @@ export function serviceGraph(input: {
         description: input.description,
       },
       breadcrumbGraph(input.crumbs),
-      {
-        "@type": "FAQPage",
-        mainEntity: input.faqs.map((faq) => ({
-          "@type": "Question",
-          name: faq.question,
-          acceptedAnswer: { "@type": "Answer", text: faq.answer },
-        })),
-      },
     ],
   };
 }

@@ -1,5 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
 import { PageIntro } from "@/components/PageIntro";
+import { aboutPhoto } from "@/lib/photos";
 import { YearCounter } from "@/components/YearCounter";
 import { buildMetadata } from "@/lib/seo";
 import {
@@ -37,7 +39,9 @@ export default function NosotrosPage() {
           </article>
           <article className="card p-5">
             <p className="text-3xl font-extrabold text-nav">SEC</p>
-            <p className="text-sm font-bold text-muted">Cercos eléctricos conforme a normativa SEC</p>
+            <p className="text-sm font-bold text-muted">
+              Cercos eléctricos conforme a normativa SEC
+            </p>
           </article>
           <article className="card p-5">
             <p className="text-3xl font-extrabold text-nav">6</p>
@@ -45,26 +49,42 @@ export default function NosotrosPage() {
           </article>
         </section>
 
-        <section className="card p-6">
-          <p className="text-sm font-extrabold tracking-wide text-brand-dark uppercase">Nuestra empresa</p>
-          <h2 className="mt-2 text-2xl font-extrabold text-nav">{site.legalName}</h2>
-          <p className="mt-3 text-muted">
-            Somos una empresa de Concepción dedicada a la seguridad electrónica y a los sistemas de
-            señales débiles. El trabajo se ha desarrollado de manera sostenida desde {site.foundingYear},
-            con ejecución, integración y mantención para constructoras, edificios, condominios y
-            empresas. Hoy son {years} años de calendario desde ese inicio.
-          </p>
-          <p className="mt-3 text-muted">
-            El material corporativo también usa la línea “automatización y seguridad electrónica” en
-            los flyers. La razón social no cambia: Comunicaciones y Seguridad Electrónica Ltda.
-          </p>
+        <section className="grid items-center gap-6 lg:grid-cols-[.85fr_1.15fr]">
+          <Image
+            src={aboutPhoto.src}
+            alt={aboutPhoto.alt}
+            width={1152}
+            height={864}
+            sizes="(min-width: 1024px) 38vw, 94vw"
+            className="aspect-[4/3] w-full rounded-[20px] object-cover"
+          />
+          <div className="card p-6">
+            <p className="text-sm font-extrabold tracking-wide text-brand-dark uppercase">
+              Nuestra empresa
+            </p>
+            <h2 className="mt-2 text-2xl font-extrabold text-nav">{site.legalName}</h2>
+            <p className="mt-3 text-muted">
+              Somos una empresa de Concepción dedicada a la seguridad electrónica y a los sistemas
+              de señales débiles. El trabajo se ha desarrollado de manera sostenida desde{" "}
+              {site.foundingYear}, con ejecución, integración y mantención para constructoras,
+              edificios, condominios y empresas. Hoy son {years} años de calendario desde ese
+              inicio.
+            </p>
+            <p className="mt-3 text-muted">
+              El material corporativo también usa la línea “automatización y seguridad electrónica”
+              en los flyers. La razón social no cambia: Comunicaciones y Seguridad Electrónica Ltda.
+            </p>
+          </div>
         </section>
 
         <section>
           <h2 className="text-2xl font-extrabold text-nav">Dónde se usa el servicio</h2>
           <ul className="mt-4 flex flex-wrap gap-2">
             {sectors.map((sector) => (
-              <li key={sector} className="rounded-full bg-white px-4 py-2 text-sm font-bold text-nav">
+              <li
+                key={sector}
+                className="rounded-full bg-white px-4 py-2 text-sm font-bold text-nav"
+              >
                 {sector}
               </li>
             ))}
@@ -85,11 +105,13 @@ export default function NosotrosPage() {
             </ul>
           </article>
           <article className="card p-6">
-            <h2 className="text-xl font-extrabold text-nav">Señales débiles y telecomunicaciones</h2>
+            <h2 className="text-xl font-extrabold text-nav">
+              Señales débiles y telecomunicaciones
+            </h2>
             <p className="mt-2 text-sm text-muted">
-              Además de los seis rubros de seguridad, PROTEF presta mantención preventiva y correctiva
-              de señales débiles para edificios, comunidades y condominios, e instala redes de datos en
-              proyectos habitacionales y comerciales.
+              Además de los seis rubros de seguridad, PROTEF presta mantención preventiva y
+              correctiva de señales débiles para edificios, comunidades y condominios, e instala
+              redes de datos en proyectos habitacionales y comerciales.
             </p>
             <p className="mt-3 text-sm text-muted">
               El mismo material informa participación en más de 30 proyectos habitacionales y

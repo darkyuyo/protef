@@ -36,13 +36,7 @@ const inter = localFont({
 });
 import { CookieNotice } from "@/components/CookieNotice";
 import { JsonLd } from "@/components/JsonLd";
-import {
-  Footer,
-  Header,
-  StickyCallBar,
-  UrgentStrip,
-  WhatsAppFloat,
-} from "@/components/SiteChrome";
+import { Footer, Header, UrgentStrip } from "@/components/SiteChrome";
 import { TrackClicks } from "@/components/Analytics";
 import { businessGraph } from "@/lib/jsonld";
 import { pageMeta, site } from "@/lib/site.config";
@@ -88,12 +82,8 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <JsonLd data={businessGraph()} />
         <UrgentStrip />
         <Header />
-        <main id="contenido" className="has-callbar">
-          {children}
-        </main>
+        <main id="contenido">{children}</main>
         <Footer />
-        <WhatsAppFloat />
-        <StickyCallBar />
         <CookieNotice />
         <TrackClicks />
         <Script id="consent-flag" strategy="beforeInteractive">

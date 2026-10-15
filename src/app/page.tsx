@@ -1,177 +1,282 @@
+import Image from "next/image";
 import Link from "next/link";
-import { Phone } from "lucide-react";
-import { CTA } from "@/components/CTA";
+import { ArrowRight, Award, CalendarCheck, Headphones, Handshake, Lightbulb } from "lucide-react";
 import { JsonLd } from "@/components/JsonLd";
 import { Reveal } from "@/components/Reveal";
-import { ServiceCard } from "@/components/ServiceCard";
-import { WhatsAppIcon, serviceIcons } from "@/components/icons";
+import { serviceIcons } from "@/components/icons";
 import { YearCounter } from "@/components/YearCounter";
+import { heroPhoto, homePhotos } from "@/lib/photos";
 import { buildMetadata } from "@/lib/seo";
-import {
-  defaultWhatsappText,
-  howItWorks,
-  pageMeta,
-  services,
-  site,
-  whatsappHref,
-  yearsOfExperience,
-} from "@/lib/site.config";
+import { pageMeta, services, site, yearsOfExperience } from "@/lib/site.config";
 
 export const metadata = buildMetadata(pageMeta.home);
 
 const years = yearsOfExperience();
 
+const homeLines: Record<string, string> = {
+  cctv: "Cámaras, NVR y grabación que vuelven a mostrar imagen.",
+  cercos: "Perímetro eléctrico revisado y conforme a normativa SEC.",
+  portones: "Motor, fotoceldas y portón que vuelve a abrir.",
+  citofonos: "Audio, video y apertura en edificios y condominios.",
+  biometrico: "Huella, rostro, tarjetas y torniquetes en servicio.",
+  alarmas: "Detectores, sirenas y centrales listos para una prueba.",
+};
+
+const defines = [
+  {
+    title: "Innovación",
+    text: "Cámaras, acceso facial, lectura de patentes y centrales que se revisan en el equipo que el edificio ya tiene.",
+    icon: Lightbulb,
+  },
+  {
+    title: "Compromiso",
+    text: "Primero vemos qué falló. La cotización sale de ese diagnóstico, no de cambiar el sistema completo.",
+    icon: Handshake,
+  },
+  {
+    title: "Dedicación",
+    text: "La visita deja el acceso probado: cableado ordenado, configuración completa y un técnico que conoce ese equipo.",
+    icon: Award,
+  },
+  {
+    title: "Postventa",
+    text: "Después de reparar seguimos. Ajustes, mantención y un teléfono de lunes a viernes.",
+    icon: Headphones,
+  },
+];
+
 export default function HomePage() {
   return (
     <>
-      <JsonLd data={{ "@context": "https://schema.org", "@type": "WebPage", name: pageMeta.home.title, url: `${site.url}/` }} />
-      <section className="hero-mesh surface-dark relative overflow-hidden border-b-4 border-gold text-white">
-        <svg className="hero-blob pointer-events-none absolute -top-16 right-0 h-64 w-64 opacity-40" viewBox="0 0 200 200" aria-hidden="true">
-          <circle cx="100" cy="100" r="80" fill="#00b4d8" />
-        </svg>
-        <div className="container-protef relative py-12 md:py-16">
-          <p className="hero-item text-sm font-extrabold tracking-wide text-gold uppercase">
-            Soluciones inteligentes, seguridad real
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          name: pageMeta.home.title,
+          url: `${site.url}/`,
+        }}
+      />
+      <section className="surface-dark relative overflow-hidden border-b-4 border-gold text-white">
+        <Image
+          src={heroPhoto.src}
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-[70%_center]"
+        />
+        <div
+          className="hero-veil absolute inset-0"
+          style={{
+            position: "absolute",
+            inset: 0,
+            background:
+              "linear-gradient(105deg, rgba(5, 28, 56, 0.84) 0%, rgba(8, 72, 122, 0.68) 42%, rgba(0, 110, 170, 0.5) 100%)",
+          }}
+        />
+        <div className="container-protef relative py-16 md:py-24">
+          <p className="hero-item inline-flex rounded-full border border-gold/50 bg-gold/15 px-3 py-1 text-xs font-extrabold tracking-wider text-gold uppercase">
+            Concepción · desde {site.foundingYear}
           </p>
-          <h1 className="hero-item hero-d1 mt-3 max-w-4xl text-[clamp(2rem,5vw,3.4rem)] leading-[1.1] font-extrabold">
-            Servicio técnico de seguridad electrónica en Concepción
+          <h1 className="hero-item hero-d1 mt-4 max-w-3xl text-[clamp(2.2rem,5.4vw,4rem)] leading-[1.05] font-extrabold">
+            Seguridad electrónica para edificios y condominios
           </h1>
-          <p className="hero-item hero-d2 mt-4 max-w-2xl text-lg text-white/90">
-            Protegemos lo que más valora con tecnología y un técnico en terreno. Reparación y
-            mantención para edificios, condominios y empresas en Concepción, Talcahuano y San Pedro
-            de la Paz.
+          <p className="hero-item hero-d2 mt-5 max-w-xl text-lg text-white/90">
+            Si el portón no abre, la cámara no graba o el cerco se apagó, llame. Un técnico sale a
+            terreno en {site.communes.join(", ")}.
           </p>
-          <div className="hero-item hero-d3 mt-6 flex flex-wrap gap-3">
-            <a
-              href={site.phoneTel}
-              className="inline-flex min-h-11 items-center gap-2 rounded-full bg-gold px-5 font-extrabold text-nav"
-            >
-              <Phone className="h-4 w-4" aria-hidden="true" />
-              Llamar {site.phoneDisplay}
-            </a>
-            <a
-              href={whatsappHref(defaultWhatsappText)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/40 px-5 font-bold"
-              aria-label="Escribir por WhatsApp a PROTEF sobre seguridad electrónica"
-            >
-              <WhatsAppIcon className="h-5 w-5 text-[#25d366]" />
-              WhatsApp
-            </a>
+          <Link
+            href="/servicios"
+            className="hero-item hero-d3 mt-6 inline-flex min-h-11 items-center gap-2 text-sm font-bold text-gold"
+          >
+            Ver los sistemas
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          </Link>
+        </div>
+      </section>
+
+      <section className="container-protef relative z-10 -mt-8">
+        <dl className="grid gap-3 sm:grid-cols-3">
+          <div className="card p-5">
+            <dt className="text-xs font-bold tracking-wide text-muted uppercase">Trayectoria</dt>
+            <dd className="mt-1 text-2xl font-extrabold text-nav">
+              <YearCounter value={years} /> años
+            </dd>
+            <dd className="text-sm text-muted">Desde {site.foundingYear}</dd>
           </div>
-          <ul className="mt-8 flex min-h-36 flex-wrap gap-2">
-            {services.map((service) => (
-              <li key={service.id}>
+          <div className="card p-5">
+            <dt className="text-xs font-bold tracking-wide text-muted uppercase">Cobertura</dt>
+            <dd className="mt-1 font-extrabold text-nav">{site.communes.join(" · ")}</dd>
+          </div>
+          <div className="card p-5">
+            <dt className="text-xs font-bold tracking-wide text-muted uppercase">Urgencias</dt>
+            <dd className="mt-1 font-extrabold text-nav">Lunes a viernes, en terreno</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section className="container-protef py-14" aria-labelledby="sistemas-titulo">
+        <div className="flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <p className="text-sm font-extrabold tracking-wide text-brand-dark uppercase">
+              Qué reparamos
+            </p>
+            <h2
+              id="sistemas-titulo"
+              className="mt-2 max-w-2xl text-[clamp(1.7rem,3vw,2.4rem)] leading-tight font-extrabold text-nav"
+            >
+              Seis sistemas. Un teléfono.
+            </h2>
+          </div>
+          <Link
+            href="/servicios"
+            className="inline-flex min-h-11 items-center gap-2 font-bold text-nav underline"
+          >
+            Ver cada sistema
+          </Link>
+        </div>
+        <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          {services.map((service, index) => {
+            const Icon = serviceIcons[service.icon];
+            return (
+              <Reveal key={service.id} delay={index * 0.06}>
                 <Link
                   href={service.path}
-                  className="inline-flex min-h-11 items-center rounded-full bg-white/10 px-4 text-sm font-bold hover:bg-white/20"
+                  className="card flex h-full flex-col p-5 transition duration-200 hover:-translate-y-1 hover:shadow-[0_16px_36px_rgba(5,28,56,.12)]"
                 >
-                  {service.cardLabel}
+                  <span className="grid h-12 w-12 place-items-center rounded-[12px] bg-nav text-gold">
+                    <Icon aria-hidden="true" />
+                  </span>
+                  <h3 className="mt-4 text-xl font-extrabold text-nav">{service.title}</h3>
+                  <p className="mt-2 text-muted">{homeLines[service.id]}</p>
+                  <span className="mt-4 inline-flex items-center gap-1 text-sm font-extrabold text-brand-dark">
+                    Pedir este servicio
+                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  </span>
                 </Link>
-              </li>
-            ))}
-          </ul>
-          <dl className="mt-8 grid gap-3 sm:grid-cols-3">
-            <div className="rounded-[12px] bg-black/20 p-4">
-              <dt className="text-xs font-bold tracking-wide text-white/70 uppercase">Trayectoria</dt>
-              <dd className="text-2xl font-extrabold">
-                Desde {site.foundingYear} · <YearCounter value={years} /> años
-              </dd>
-            </div>
-            <div className="rounded-[12px] bg-black/20 p-4">
-              <dt className="text-xs font-bold tracking-wide text-white/70 uppercase">Cobertura</dt>
-              <dd className="font-extrabold">{site.communes.join(" · ")}</dd>
-            </div>
-            <div className="rounded-[12px] bg-black/20 p-4">
-              <dt className="text-xs font-bold tracking-wide text-white/70 uppercase">Urgencias</dt>
-              <dd className="font-extrabold">Lunes a viernes, en terreno</dd>
-            </div>
-          </dl>
+              </Reveal>
+            );
+          })}
         </div>
       </section>
 
-      <section className="container-protef py-12" aria-labelledby="rubros-titulo">
-        <h2 id="rubros-titulo" className="text-[clamp(1.6rem,3vw,2.2rem)] font-extrabold text-nav">
-          Seis rubros, con reparación cuando el sistema se cae
-        </h2>
-        <p className="mt-2 max-w-3xl text-muted">
-          Instalación, reparación y mantención. Si la falla es de hoy, elija el rubro y llame. La
-          visita se agenda de lunes a viernes.
-        </p>
-        <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {services.map((service) => (
-            <Reveal key={service.id}>
-              <ServiceCard service={service} />
-            </Reveal>
-          ))}
-        </div>
-      </section>
+      <figure className="relative h-56 overflow-hidden sm:h-72 md:h-96">
+        <Image
+          src={homePhotos.edificio.src}
+          alt={homePhotos.edificio.alt}
+          fill
+          sizes="100vw"
+          className="object-cover"
+        />
+      </figure>
 
-      <section className="bg-white py-12" aria-labelledby="sistemas-titulo">
+      <section className="bg-white/75 py-16" aria-labelledby="define-titulo">
         <div className="container-protef">
-          <p className="text-sm font-extrabold tracking-wide text-brand-dark uppercase">Sistemas en los que trabajamos</p>
-          <h2 id="sistemas-titulo" className="mt-2 text-3xl font-extrabold text-nav">
-            Tecnología de seguridad que ya está en su edificio
+          <h2
+            id="define-titulo"
+            className="text-center text-[clamp(1.8rem,3vw,2.6rem)] font-extrabold text-nav"
+          >
+            Lo que nos define
           </h2>
-          <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {services.map((service) => {
-              const Icon = serviceIcons[service.icon];
+          <div className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+            {defines.map((item) => {
+              const Icon = item.icon;
               return (
-                <li key={service.id} className="card flex items-center gap-3 p-4">
-                  <Icon className="text-brand-dark" aria-hidden="true" />
-                  <span className="font-bold">{service.cardLabel}</span>
-                </li>
+                <article key={item.title} className="text-center">
+                  <span className="mx-auto grid h-12 w-12 place-items-center text-brand-dark">
+                    <Icon className="h-8 w-8" strokeWidth={1.75} aria-hidden="true" />
+                  </span>
+                  <h3 className="mt-3 text-lg font-extrabold text-nav">{item.title}</h3>
+                  <p className="mt-2 text-sm text-muted">{item.text}</p>
+                </article>
               );
             })}
-          </ul>
+          </div>
         </div>
       </section>
 
-      <section className="container-protef py-12" aria-labelledby="como-titulo">
-        <h2 id="como-titulo" className="text-center text-sm font-extrabold tracking-[0.2em] text-nav uppercase">
-          Cómo funciona
-        </h2>
-        <ol className="mt-6 grid gap-4 md:grid-cols-5">
-          {howItWorks.map((step) => (
-            <li key={step.step} className="card h-full p-4 text-center">
-              <span className="text-sm font-extrabold text-nav">{step.step}</span>
-              <h3 className="mt-1 font-extrabold text-nav">{step.title}</h3>
-              <p className="mt-2 text-sm text-muted">{step.text}</p>
-            </li>
-          ))}
-        </ol>
+      <section className="bg-white" aria-labelledby="mantencion-titulo">
+        <div className="container-protef py-16">
+          <div className="overflow-hidden rounded-[20px] border border-[rgba(5,28,56,.12)] shadow-[0_16px_40px_rgba(5,28,56,.08)] md:grid md:grid-cols-[1.2fr_.8fr]">
+            <div className="border-l-8 border-gold p-8 md:p-10">
+              <p className="inline-flex items-center gap-2 text-sm font-extrabold tracking-wide text-brand-dark uppercase">
+                <CalendarCheck className="h-4 w-4" aria-hidden="true" />
+                Planes de mantención
+              </p>
+              <h2
+                id="mantencion-titulo"
+                className="mt-3 max-w-xl text-[clamp(1.8rem,3vw,2.6rem)] leading-tight font-extrabold text-nav"
+              >
+                Mantención antes de la falla
+              </h2>
+              <p className="mt-4 max-w-xl text-lg text-muted">
+                Una visita con fecha, antes de que el portón o la cámara dejen de funcionar. El
+                plan queda para el edificio, no para el día de la urgencia.
+              </p>
+              <ul className="mt-6 grid gap-3 sm:grid-cols-3">
+                <li className="rounded-[12px] bg-[#eef4fa] px-4 py-3 text-sm font-bold text-nav">
+                  Visita con fecha
+                </li>
+                <li className="rounded-[12px] bg-[#eef4fa] px-4 py-3 text-sm font-bold text-nav">
+                  Diagnóstico en terreno
+                </li>
+                <li className="rounded-[12px] bg-[#eef4fa] px-4 py-3 text-sm font-bold text-nav">
+                  Seis sistemas, si el recinto los tiene
+                </li>
+              </ul>
+            </div>
+            <div className="flex flex-col justify-center gap-3 bg-[#f7fafc] p-8 md:p-10">
+              <Link
+                href="/planes"
+                className="inline-flex min-h-14 items-center justify-center rounded-full bg-gold px-6 text-lg font-extrabold text-nav"
+              >
+                Ver planes
+              </Link>
+              <Link
+                href="/mantencion"
+                className="inline-flex min-h-14 items-center justify-center rounded-full border border-nav/20 bg-white px-6 font-extrabold text-nav"
+              >
+                Qué incluye
+              </Link>
+            </div>
+          </div>
+        </div>
       </section>
 
-      <section className="container-protef pb-12">
-        <div className="grid gap-4 md:grid-cols-3">
-          <article className="card p-5">
-            <h2 className="font-extrabold text-nav">Solución profesional</h2>
-            <p className="mt-2 text-sm text-muted">Diagnóstico en terreno y ejecución con el equipo que el recinto ya tiene.</p>
-          </article>
-          <article className="card p-5">
-            <h2 className="font-extrabold text-nav">Control del sistema</h2>
-            <p className="mt-2 text-sm text-muted">Revisión para que cámaras, accesos y alarmas sigan operativos después de la visita.</p>
-          </article>
-          <article className="card p-5">
-            <h2 className="font-extrabold text-nav">Hecho para condominios</h2>
-            <p className="mt-2 text-sm text-muted">Edificios, comunidades y empresas que necesitan un técnico, no un catálogo.</p>
-          </article>
+      <section className="relative overflow-hidden border-y-4 border-gold text-white">
+        <Image
+          src={homePhotos.noche.src}
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-nav/70" />
+        <div className="container-protef relative grid items-center gap-6 py-16 md:grid-cols-[1.15fr_.85fr]">
+          <div>
+            <p className="text-sm font-extrabold tracking-wide text-gold uppercase">
+              Servicio técnico
+            </p>
+            <h2 className="mt-2 text-[clamp(1.8rem,3vw,2.6rem)] leading-tight font-extrabold">
+              ¿El sistema falló hoy?
+            </h2>
+            <p className="mt-3 max-w-xl text-white/90">
+              Si puede esperar el día hábil, escriba a{" "}
+              <a className="font-bold text-gold underline" href={`mailto:${site.email}`}>
+                {site.email}
+              </a>{" "}
+              o pida la cotización.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-3 md:justify-end">
+            <Link
+              href="/contacto"
+              className="inline-flex min-h-14 items-center rounded-full bg-white px-6 font-extrabold text-nav"
+            >
+              Pedir cotización
+            </Link>
+          </div>
         </div>
-        <div className="mt-8">
-          <CTA
-            title="¿El sistema falló hoy?"
-            text="Llame primero. WhatsApp es el segundo camino. El formulario queda para cotizaciones que pueden esperar el día hábil."
-            waText={defaultWhatsappText}
-          />
-        </div>
-        <p className="mt-6 text-sm text-muted">
-          También integramos señales débiles y telecomunicaciones en proyectos de edificios. El detalle está en{" "}
-          <Link className="font-bold text-nav underline" href="/nosotros">
-            quiénes somos
-          </Link>
-          .
-        </p>
       </section>
     </>
   );

@@ -39,7 +39,14 @@ html {
 
 body {
   margin: 0;
-  background: var(--warm-bg);
+  background-color: #d5e3f0;
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(5, 28, 56, 0.07) 1px, transparent 0),
+    radial-gradient(circle at 12% 0%, rgba(255, 255, 255, 0.78), transparent 36%),
+    radial-gradient(circle at 100% 8%, rgba(0, 180, 216, 0.16), transparent 30%),
+    linear-gradient(180deg, #eef4fa 0%, #c9d8e8 55%, #dbe7f3 100%);
+  background-size: 22px 22px, auto, auto, auto;
+  background-attachment: fixed;
   color: var(--ink);
   font-family: "Inter", system-ui, sans-serif;
   line-height: 1.6;
@@ -95,13 +102,47 @@ html[data-consent] .cookie-banner {
   box-shadow: 0 8px 28px rgba(5, 28, 56, 0.08);
 }
 
+.card-featured {
+  background: var(--gold);
+  border-color: #e3ad12;
+}
+
 .hero-mesh {
   background:
     radial-gradient(circle at 85% 20%, rgba(0, 180, 216, 0.35), transparent 28%),
     linear-gradient(135deg, #051c38 0%, #0a4d7a 52%, #0077b6 100%);
 }
 
+.hero-veil {
+  background: linear-gradient(
+    105deg,
+    rgba(5, 28, 56, 0.84) 0%,
+    rgba(8, 72, 122, 0.68) 42%,
+    rgba(0, 110, 170, 0.5) 100%
+  );
+}
+
 @media (prefers-reduced-motion: no-preference) {
+  .hero-item {
+    animation: hero-in 0.55s ease both;
+  }
+
+  .hero-d1 {
+    animation-delay: 0.08s;
+  }
+
+  .hero-d2 {
+    animation-delay: 0.16s;
+  }
+
+  .hero-d3 {
+    animation-delay: 0.24s;
+  }
+
+  .pulse-urgent {
+    animation: pulse-urgent 2.4s ease-in-out infinite;
+  }
+
   .hero-blob {
     animation: drift 14s ease-in-out infinite alternate;
   }
@@ -125,8 +166,8 @@ html[data-consent] .cookie-banner {
 }
 
 @keyframes hero-in {
-  from { transform: translateY(10px); }
-  to { transform: none; }
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: none; }
 }
 
 @keyframes pulse-urgent {
@@ -181,8 +222,3 @@ textarea.input {
   min-height: 8rem;
 }
 
-@media (max-width: 767px) {
-  .has-callbar {
-    padding-bottom: 5.25rem;
-  }
-}

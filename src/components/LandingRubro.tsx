@@ -1,13 +1,14 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Phone } from "lucide-react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTA } from "@/components/CTA";
-import { FAQ } from "@/components/FAQ";
 import { JsonLd } from "@/components/JsonLd";
 import { Reveal } from "@/components/Reveal";
 import { WhatsAppIcon } from "@/components/icons";
 import { relatedServices, type Landing } from "@/content/landings";
 import { serviceGraph } from "@/lib/jsonld";
+import { servicePhoto } from "@/lib/photos";
 import { site, whatsappHref } from "@/lib/site.config";
 
 export function LandingRubro({ landing }: { landing: Landing }) {
@@ -17,6 +18,7 @@ export function LandingRubro({ landing }: { landing: Landing }) {
     { name: landing.h1, path: landing.path },
   ];
   const related = relatedServices(landing.id);
+  const photo = servicePhoto(landing.id);
 
   return (
     <>
@@ -26,39 +28,61 @@ export function LandingRubro({ landing }: { landing: Landing }) {
           name: landing.serviceName,
           description: landing.lead,
           crumbs,
-          faqs: landing.faqs.map((faq) => ({ question: faq.question, answer: faq.answer })),
         })}
       />
       <article>
-        <header className="hero-mesh surface-dark relative overflow-hidden border-b-4 border-gold text-white">
-          <div className="container-protef py-10 md:py-14">
+        <header className="surface-dark relative overflow-hidden border-b-4 border-gold text-white">
+          {photo ? (
+            <Image
+              src={photo.src}
+              alt=""
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover object-center"
+            />
+          ) : null}
+          <div
+            className="absolute inset-0"
+            style={{
+              position: "absolute",
+              inset: 0,
+              background:
+                "linear-gradient(105deg, rgba(5, 28, 56, 0.88) 0%, rgba(8, 72, 122, 0.74) 48%, rgba(0, 110, 170, 0.58) 100%)",
+            }}
+          />
+          <div className="container-protef relative py-10 md:py-14">
             <Breadcrumbs items={crumbs} tone="dark" />
-            <p className="hero-item mt-5 inline-flex rounded-full border border-white/30 bg-white/10 px-3 py-1 text-xs font-extrabold uppercase tracking-wider">
-              {landing.eyebrow}
-            </p>
-            <h1 className="hero-item hero-d1 mt-4 max-w-4xl text-[clamp(1.8rem,4vw,3rem)] leading-tight font-extrabold">
-              {landing.h1}
-            </h1>
-            <p className="hero-item hero-d2 mt-4 max-w-3xl text-lg text-white/90">{landing.lead}</p>
-            <div className="hero-item hero-d3 mt-6 flex flex-wrap gap-3">
-              <a
-                href={site.phoneTel}
-                className="pulse-urgent inline-flex min-h-11 items-center gap-2 rounded-full bg-gold px-5 font-extrabold text-nav"
-                aria-label={`Llamar a PROTEF al ${site.phoneDisplay}`}
-              >
-                <Phone className="h-4 w-4" aria-hidden="true" />
-                Urgencia: llamar ahora
-              </a>
-              <a
-                href={whatsappHref(landing.waText)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/40 px-5 font-bold"
-                aria-label={`Escribir por WhatsApp a PROTEF: ${landing.h1}`}
-              >
-                <WhatsAppIcon className="h-5 w-5 text-[#25d366]" />
-                WhatsApp
-              </a>
+            <div className="mt-5">
+                <p className="hero-item inline-flex rounded-full border border-white/30 bg-white/10 px-3 py-1 text-xs font-extrabold uppercase tracking-wider">
+                  {landing.eyebrow}
+                </p>
+                <h1 className="hero-item hero-d1 mt-4 max-w-4xl text-[clamp(1.8rem,4vw,3rem)] leading-tight font-extrabold">
+                  {landing.h1}
+                </h1>
+                <p className="hero-item hero-d2 mt-4 max-w-3xl text-lg text-white/90">
+                  {landing.lead}
+                </p>
+                <div className="hero-item hero-d3 mt-6 flex flex-wrap gap-3">
+                  <a
+                    href={site.phoneTel}
+                    className="pulse-urgent inline-flex min-h-11 items-center gap-2 rounded-full bg-gold px-5 font-extrabold text-nav"
+                    aria-label={`Llamar a PROTEF al ${site.phoneDisplay}`}
+                  >
+                    <Phone className="h-4 w-4" aria-hidden="true" />
+                    Urgencia: llamar ahora
+                  </a>
+                  <a
+                    href={whatsappHref(landing.waText)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/40 px-5 font-bold"
+                    aria-label={`Escribir por WhatsApp a PROTEF: ${landing.h1}`}
+                  >
+                    <WhatsAppIcon className="h-5 w-5 text-[#25d366]" />
+                    WhatsApp
+                  </a>
+                </div>
             </div>
           </div>
         </header>
@@ -118,7 +142,10 @@ export function LandingRubro({ landing }: { landing: Landing }) {
                 </p>
                 <ul className="mt-4 flex flex-wrap gap-2">
                   {site.communes.map((commune) => (
-                    <li key={commune} className="rounded-full bg-[#eef4fb] px-3 py-2 text-sm font-bold text-nav">
+                    <li
+                      key={commune}
+                      className="rounded-full bg-[#eef4fb] px-3 py-2 text-sm font-bold text-nav"
+                    >
                       {commune}
                     </li>
                   ))}
@@ -135,14 +162,15 @@ export function LandingRubro({ landing }: { landing: Landing }) {
             </section>
           </Reveal>
 
-          <FAQ items={landing.faqs} />
-
           <section>
             <h2 className="text-2xl font-extrabold text-nav">Otros rubros en Concepción</h2>
             <ul className="mt-4 grid gap-3 md:grid-cols-2">
               {related.map((service) => (
                 <li key={service.id}>
-                  <Link className="card block p-4 font-bold text-brand-dark hover:underline" href={service.path}>
+                  <Link
+                    className="card block p-4 font-bold text-brand-dark hover:underline"
+                    href={service.path}
+                  >
                     {service.anchor}
                   </Link>
                 </li>

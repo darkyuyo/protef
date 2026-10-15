@@ -75,6 +75,15 @@ export function Header() {
             <span className="sm:hidden">Llamar</span>
             <span className="hidden sm:inline">{site.phoneDisplay}</span>
           </a>
+          <a
+            href={whatsappHref(defaultWhatsappText)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#075e54] text-white"
+            aria-label="Escribir por WhatsApp a PROTEF"
+          >
+            <WhatsAppIcon className="h-5 w-5" />
+          </a>
           <button
             type="button"
             className="inline-flex h-11 w-11 items-center justify-center rounded-[12px] border border-white/20 lg:hidden"
@@ -157,41 +166,3 @@ export function Footer() {
   );
 }
 
-export function WhatsAppFloat() {
-  return (
-    <a
-      href={whatsappHref(defaultWhatsappText)}
-      target="_blank"
-      rel="noopener noreferrer"
-      aria-label="Escribir por WhatsApp a PROTEF sobre seguridad electrónica"
-      className="fixed right-4 bottom-6 z-30 hidden h-14 w-14 place-items-center rounded-full bg-[#075e54] text-white shadow-lg md:grid"
-    >
-      <WhatsAppIcon />
-    </a>
-  );
-}
-
-export function StickyCallBar() {
-  return (
-    <div className="surface-dark fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 gap-2 border-t border-white/10 bg-nav p-2 md:hidden">
-      <a
-        href={site.phoneTel}
-        className="inline-flex min-h-11 items-center justify-center gap-2 rounded-[12px] bg-gold font-extrabold text-nav"
-        aria-label={`Llamar a PROTEF al ${site.phoneDisplay}`}
-      >
-        <Phone className="h-4 w-4" aria-hidden="true" />
-        Llamar
-      </a>
-      <a
-        href={whatsappHref(defaultWhatsappText)}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-flex min-h-11 items-center justify-center gap-2 rounded-[12px] bg-[#075e54] font-extrabold text-white"
-        aria-label="Escribir por WhatsApp a PROTEF"
-      >
-        <WhatsAppIcon className="h-5 w-5" />
-        WhatsApp
-      </a>
-    </div>
-  );
-}
