@@ -83,13 +83,16 @@ const nextConfig: NextConfig = {
     ];
   },
   async headers() {
-    return [
+    const routes: { source: string; headers: { key: string; value: string }[] }[] = [
       { source: "/:path*", headers: securityHeaders },
-      {
+    ];
+    if (!isDev) {
+      routes.push({
         source: "/_next/static/:path*",
         headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }],
-      },
-    ];
+      });
+    }
+    return routes;
   },
 };
 

@@ -19,19 +19,27 @@ export default function PlanesPage() {
       />
       <div className="container-protef py-10">
         <div className="grid gap-4 lg:grid-cols-4">
-          {plans.map((plan) => (
-            <Reveal key={plan.id}>
-              <article className={`card flex h-full flex-col p-5 ${plan.featured ? "ring-2 ring-gold" : ""}`}>
+          {plans.map((plan, index) => (
+            <Reveal key={plan.id} delay={index * 0.08}>
+              <article
+                className={`card flex h-full flex-col p-5 ${plan.featured ? "card-featured" : ""}`}
+              >
                 {plan.featured ? (
-                  <p className="text-xs font-extrabold tracking-wide text-brand-dark uppercase">El más elegido en el sitio actual</p>
+                  <p className="text-xs font-extrabold tracking-wide text-nav uppercase">
+                    El más elegido en el sitio actual
+                  </p>
                 ) : null}
                 <h2 className="mt-1 text-xl font-extrabold text-nav">
                   {plan.name} ({plan.cadence})
                 </h2>
-                <p className="text-sm text-muted">{plan.summary}</p>
+                <p className={`text-sm ${plan.featured ? "text-nav/80" : "text-muted"}`}>{plan.summary}</p>
                 <p className="mt-4 text-3xl font-extrabold text-nav">
                   {plan.price}{" "}
-                  <span className="block text-sm font-bold text-muted">{plan.priceDetail}</span>
+                  <span
+                    className={`block text-sm font-bold ${plan.featured ? "text-nav/80" : "text-muted"}`}
+                  >
+                    {plan.priceDetail}
+                  </span>
                 </p>
                 <ul className="mt-4 grid flex-1 gap-2 text-sm">
                   {plan.features.map((feature) => (

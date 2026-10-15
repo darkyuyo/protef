@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Phone } from "lucide-react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -8,18 +7,16 @@ import { JsonLd } from "@/components/JsonLd";
 import { Reveal } from "@/components/Reveal";
 import { WhatsAppIcon } from "@/components/icons";
 import { relatedServices, type Landing } from "@/content/landings";
-import { servicePhoto } from "@/lib/photos";
 import { serviceGraph } from "@/lib/jsonld";
 import { site, whatsappHref } from "@/lib/site.config";
 
 export function LandingRubro({ landing }: { landing: Landing }) {
   const crumbs = [
     { name: "Inicio", path: "/" },
-    { name: "Servicios", path: "/servicios" },
+    { name: "Servicios", path: "/#rubros" },
     { name: landing.h1, path: landing.path },
   ];
   const related = relatedServices(landing.id);
-  const photo = servicePhoto(landing.id);
 
   return (
     <>
@@ -36,8 +33,7 @@ export function LandingRubro({ landing }: { landing: Landing }) {
         <header className="hero-mesh surface-dark relative overflow-hidden border-b-4 border-gold text-white">
           <div className="container-protef py-10 md:py-14">
             <Breadcrumbs items={crumbs} tone="dark" />
-            <div className="mt-5 grid items-center gap-8 lg:grid-cols-[1.15fr_.85fr]">
-              <div>
+            <div className="mt-5">
                 <p className="hero-item inline-flex rounded-full border border-white/30 bg-white/10 px-3 py-1 text-xs font-extrabold uppercase tracking-wider">
                   {landing.eyebrow}
                 </p>
@@ -67,20 +63,6 @@ export function LandingRubro({ landing }: { landing: Landing }) {
                     WhatsApp
                   </a>
                 </div>
-              </div>
-              {photo ? (
-                <figure className="hero-item hero-d2">
-                  <Image
-                    src={photo.src}
-                    alt={photo.alt}
-                    width={1152}
-                    height={864}
-                    priority
-                    sizes="(min-width: 1024px) 38vw, 94vw"
-                    className="aspect-[4/3] w-full rounded-[20px] object-cover shadow-[0_18px_40px_rgba(0,0,0,.28)]"
-                  />
-                </figure>
-              ) : null}
             </div>
           </div>
         </header>

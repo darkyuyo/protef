@@ -167,7 +167,7 @@ export const services: Service[] = [
 export const nav = [
   { href: "/", label: "Inicio" },
   { href: "/nosotros", label: "Quiénes somos" },
-  { href: "/servicios", label: "Servicios" },
+  { href: "/#rubros", label: "Servicios" },
   { href: "/mantencion", label: "Mantención" },
   { href: "/planes", label: "Planes" },
   { href: "/contacto", label: "Contacto" },
@@ -247,34 +247,6 @@ export const plans: Plan[] = [
   },
 ];
 
-export const howItWorks = [
-  {
-    step: "1",
-    title: "Contacto",
-    text: "Nos contacta y agendamos una visita técnica en terreno.",
-  },
-  {
-    step: "2",
-    title: "Diagnóstico",
-    text: "Levantamiento, diagnóstico y una propuesta a la medida del edificio o la empresa.",
-  },
-  {
-    step: "3",
-    title: "Ejecución",
-    text: "Instalación o reparación con equipos de las marcas que ya usa el recinto.",
-  },
-  {
-    step: "4",
-    title: "Puesta en marcha",
-    text: "Pruebas del sistema y una explicación clara a conserjería o administración.",
-  },
-  {
-    step: "5",
-    title: "Mantención",
-    text: "Mantención preventiva y soporte para que la falla no se repita en silencio.",
-  },
-] as const;
-
 export const sectors = [
   "Edificios habitacionales",
   "Condominios",
@@ -329,12 +301,6 @@ export const pageMeta = {
     description:
       "PROTEF integra seguridad electrónica en Concepción desde 1995. Edificios, condominios y empresas del Biobío. Agende una visita técnica ahora.",
   },
-  servicios: {
-    path: "/servicios",
-    title: "Servicios de seguridad electrónica | PROTEF",
-    description:
-      "CCTV, cercos SEC, portones, citófonos, acceso biométrico y alarmas en Concepción. Pida visita técnica al +56 9 8210 9253, de lunes a viernes.",
-  },
   mantencion: {
     path: "/mantencion",
     title: "Mantención preventiva en Concepción | PROTEF",
@@ -370,7 +336,6 @@ export const pageMeta = {
 export const indexablePaths = [
   pageMeta.home.path,
   pageMeta.nosotros.path,
-  pageMeta.servicios.path,
   pageMeta.mantencion.path,
   pageMeta.planes.path,
   pageMeta.contacto.path,

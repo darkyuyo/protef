@@ -5,13 +5,12 @@ import { CTA } from "@/components/CTA";
 import { JsonLd } from "@/components/JsonLd";
 import { Reveal } from "@/components/Reveal";
 import { ServiceCard } from "@/components/ServiceCard";
-import { WhatsAppIcon, serviceIcons } from "@/components/icons";
+import { WhatsAppIcon } from "@/components/icons";
 import { YearCounter } from "@/components/YearCounter";
 import { heroPhoto } from "@/lib/photos";
 import { buildMetadata } from "@/lib/seo";
 import {
   defaultWhatsappText,
-  howItWorks,
   pageMeta,
   services,
   site,
@@ -81,18 +80,6 @@ export default function HomePage() {
               />
             </figure>
           </div>
-          <ul className="mt-8 flex min-h-36 flex-wrap gap-2">
-            {services.map((service) => (
-              <li key={service.id}>
-                <Link
-                  href={service.path}
-                  className="inline-flex min-h-11 items-center rounded-full bg-white/10 px-4 text-sm font-bold hover:bg-white/20"
-                >
-                  {service.cardLabel}
-                </Link>
-              </li>
-            ))}
-          </ul>
           <dl className="mt-8 grid gap-3 sm:grid-cols-3">
             <div className="rounded-[12px] bg-black/20 p-4">
               <dt className="text-xs font-bold tracking-wide text-white/70 uppercase">
@@ -114,84 +101,20 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="container-protef py-12" aria-labelledby="rubros-titulo">
+      <section id="rubros" className="container-protef py-12" aria-labelledby="rubros-titulo">
         <h2 id="rubros-titulo" className="text-[clamp(1.6rem,3vw,2.2rem)] font-extrabold text-nav">
-          Seis rubros, con reparación cuando el sistema se cae
+          Sistemas en los que trabajamos
         </h2>
-        <p className="mt-2 max-w-3xl text-muted">
-          Instalación, reparación y mantención. Si la falla es de hoy, elija el rubro y llame. La
-          visita se agenda de lunes a viernes.
-        </p>
         <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {services.map((service) => (
-            <Reveal key={service.id}>
+          {services.map((service, index) => (
+            <Reveal key={service.id} delay={index * 0.06}>
               <ServiceCard service={service} />
             </Reveal>
           ))}
         </div>
       </section>
 
-      <section className="bg-white py-12" aria-labelledby="sistemas-titulo">
-        <div className="container-protef">
-          <p className="text-sm font-extrabold tracking-wide text-brand-dark uppercase">
-            Sistemas en los que trabajamos
-          </p>
-          <h2 id="sistemas-titulo" className="mt-2 text-3xl font-extrabold text-nav">
-            Tecnología de seguridad que ya está en su edificio
-          </h2>
-          <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {services.map((service) => {
-              const Icon = serviceIcons[service.icon];
-              return (
-                <li key={service.id} className="card flex items-center gap-3 p-4">
-                  <Icon className="text-brand-dark" aria-hidden="true" />
-                  <span className="font-bold">{service.cardLabel}</span>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-      </section>
-
-      <section className="container-protef py-12" aria-labelledby="como-titulo">
-        <h2
-          id="como-titulo"
-          className="text-center text-sm font-extrabold tracking-[0.2em] text-nav uppercase"
-        >
-          Cómo funciona
-        </h2>
-        <ol className="mt-6 grid gap-4 md:grid-cols-5">
-          {howItWorks.map((step) => (
-            <li key={step.step} className="card h-full p-4 text-center">
-              <span className="text-sm font-extrabold text-nav">{step.step}</span>
-              <h3 className="mt-1 font-extrabold text-nav">{step.title}</h3>
-              <p className="mt-2 text-sm text-muted">{step.text}</p>
-            </li>
-          ))}
-        </ol>
-      </section>
-
       <section className="container-protef pb-12">
-        <div className="grid gap-4 md:grid-cols-3">
-          <article className="card p-5">
-            <h2 className="font-extrabold text-nav">Solución profesional</h2>
-            <p className="mt-2 text-sm text-muted">
-              Diagnóstico en terreno y ejecución con el equipo que el recinto ya tiene.
-            </p>
-          </article>
-          <article className="card p-5">
-            <h2 className="font-extrabold text-nav">Control del sistema</h2>
-            <p className="mt-2 text-sm text-muted">
-              Revisión para que cámaras, accesos y alarmas sigan operativos después de la visita.
-            </p>
-          </article>
-          <article className="card p-5">
-            <h2 className="font-extrabold text-nav">Hecho para condominios</h2>
-            <p className="mt-2 text-sm text-muted">
-              Edificios, comunidades y empresas que necesitan un técnico, no un catálogo.
-            </p>
-          </article>
-        </div>
         <div className="mt-8">
           <CTA
             title="¿El sistema falló hoy?"
