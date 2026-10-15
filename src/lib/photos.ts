@@ -77,6 +77,10 @@ export const pagePhotos = {
     src: "/fotos/tecnico-terreno.jpg",
     alt: "Dos técnicos revisando el gabinete del motor de un portón",
   },
+  visita: {
+    src: "/fotos/equipo/mantencion-porton.png",
+    alt: "Dos técnicos de PROTEF instalando un portón automático: uno en la escalera y otro arrodillado en el acceso",
+  },
 } as const satisfies Record<string, Photo>;
 
 export const homePhotos = {

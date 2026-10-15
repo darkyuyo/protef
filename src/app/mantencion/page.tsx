@@ -31,8 +31,8 @@ export default function MantencionPage() {
         <section className="grid items-center gap-6 lg:grid-cols-[.85fr_1.15fr]">
           <figure className="relative h-72 overflow-hidden rounded-[20px] md:h-full md:min-h-80">
             <Image
-              src={pagePhotos.terreno.src}
-              alt={pagePhotos.terreno.alt}
+              src={pagePhotos.visita.src}
+              alt={pagePhotos.visita.alt}
               fill
               sizes="(min-width: 1024px) 38vw, 94vw"
               className="object-cover"
