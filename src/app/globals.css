@@ -113,6 +113,22 @@ html[data-consent] .cookie-banner {
     linear-gradient(135deg, #051c38 0%, #0a4d7a 52%, #0077b6 100%);
 }
 
+.footer-sky {
+  background-color: #051c38;
+  background-image:
+    radial-gradient(circle, rgba(255, 255, 255, 0.55) 1px, transparent 1.4px),
+    linear-gradient(rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.14)),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.14));
+  background-size:
+    88px 88px,
+    88px 1px,
+    1px 88px;
+  background-position:
+    18px 22px,
+    0 44px,
+    44px 0;
+}
+
 .hero-veil {
   background: linear-gradient(
     105deg,

@@ -2,10 +2,10 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, Phone, X } from "lucide-react";
+import { Mail, MapPin, Menu, Phone, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { BrandMark, WhatsAppIcon } from "@/components/icons";
-import { nav, services, site, whatsappHref, defaultWhatsappText } from "@/lib/site.config";
+import { nav, site, whatsappHref, defaultWhatsappText } from "@/lib/site.config";
 
 export function UrgentStrip() {
   return (
@@ -118,69 +118,64 @@ export function Header() {
 export function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer className="surface-dark border-t-4 border-gold bg-nav text-white">
-      <div className="container-protef grid gap-10 py-12 md:grid-cols-[1.15fr_.7fr_1fr]">
+    <footer
+      className="footer-sky surface-dark text-white"
+      style={{
+        backgroundColor: "#051c38",
+        backgroundImage:
+          "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cg fill='none' stroke='rgba(255,255,255,.28)' stroke-width='1'%3E%3Cpath d='M24 20h8M28 16v8'/%3E%3Cpath d='M96 78h8M100 74v8'/%3E%3C/g%3E%3Cg fill='rgba(255,255,255,.4)'%3E%3Ccircle cx='48' cy='46' r='1.2'/%3E%3Ccircle cx='78' cy='28' r='1'/%3E%3Ccircle cx='18' cy='96' r='1'/%3E%3Ccircle cx='112' cy='40' r='1'/%3E%3C/g%3E%3C/svg%3E\")",
+        backgroundSize: "140px 140px",
+      }}
+    >
+      <div className="container-protef grid gap-10 py-14 md:grid-cols-3 md:items-start">
         <div>
-          <Link href="/" className="inline-flex items-center gap-3">
-            <BrandMark className="h-11 w-11" />
-            <span>
-              <span className="block text-lg font-extrabold tracking-wide">PROTEF</span>
-              <span className="block text-[0.7rem] font-bold tracking-wider text-brand uppercase">
-                Seguridad electrónica
-              </span>
-            </span>
-          </Link>
-          <p className="mt-4 max-w-sm text-sm text-white/75">
-            Reparación y mantención desde {site.foundingYear} en {site.communes.join(", ")}.
+          <BrandMark className="h-14 w-14" />
+          <p className="mt-4 max-w-xs text-sm text-white/80">
+            Servicio técnico de seguridad electrónica en Concepción desde {site.foundingYear}.
             Urgencias de lunes a viernes.
           </p>
-          <ul className="mt-5 grid gap-2 text-sm">
+          <Link className="mt-4 inline-flex text-sm font-bold text-brand hover:text-gold" href="/privacidad">
+            Privacidad y datos personales
+          </Link>
+        </div>
+        <div>
+          <p className="text-lg font-extrabold">Contacto</p>
+          <ul className="mt-4 grid gap-3 text-sm text-white/85">
+            <li className="flex items-start gap-2">
+              <MapPin className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
+              <span>Concepción, Región del Biobío, Chile</span>
+            </li>
             <li>
-              <a className="font-bold text-gold" href={site.phoneTel}>
+              <a className="inline-flex items-center gap-2 hover:text-gold" href={site.phoneTel}>
+                <Phone className="h-4 w-4 shrink-0" aria-hidden="true" />
                 {site.phoneDisplay}
               </a>
             </li>
             <li>
-              <a className="font-bold text-gold" href={`mailto:${site.email}`}>
+              <a className="inline-flex items-center gap-2 hover:text-gold" href={`mailto:${site.email}`}>
+                <Mail className="h-4 w-4 shrink-0" aria-hidden="true" />
                 {site.email}
               </a>
             </li>
           </ul>
         </div>
-        <nav aria-label="Páginas">
-          <p className="text-sm font-extrabold tracking-wide text-gold uppercase">Sitio</p>
-          <ul className="mt-3 grid gap-1 text-sm">
-            {nav.map((item) => (
-              <li key={item.href}>
-                <Link className="inline-flex min-h-11 items-center hover:text-gold" href={item.href}>
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-        <nav aria-label="Rubros">
-          <p className="text-sm font-extrabold tracking-wide text-gold uppercase">Servicios</p>
-          <ul className="mt-3 grid gap-1 text-sm sm:grid-cols-2 md:grid-cols-1">
-            {services.map((service) => (
-              <li key={service.id}>
-                <Link className="inline-flex min-h-11 items-center hover:text-gold" href={service.path}>
-                  {service.title}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </div>
-      <div className="border-t border-white/10">
-        <div className="container-protef flex flex-wrap items-center justify-between gap-3 py-4 text-xs text-white/70">
-          <p>
-            © {year} {site.legalName}. Concepción, Biobío.
-          </p>
-          <Link className="font-bold text-white hover:text-gold" href="/privacidad">
-            Privacidad y datos personales
-          </Link>
+        <div>
+          <p className="text-lg font-extrabold">Escríbanos</p>
+          <a
+            href={whatsappHref(defaultWhatsappText)}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Escribir por WhatsApp a PROTEF"
+            className="mt-4 inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/30 hover:border-gold hover:text-gold"
+          >
+            <WhatsAppIcon className="h-5 w-5" />
+          </a>
         </div>
+      </div>
+      <div className="border-t border-white/10 py-4 text-center text-xs text-white/60">
+        <p>
+          © {year} {site.legalName}
+        </p>
       </div>
     </footer>
   );
