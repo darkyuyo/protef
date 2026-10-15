@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Award, Headphones, Handshake, Lightbulb, Phone } from "lucide-react";
+import { ArrowRight, Award, CalendarCheck, Headphones, Handshake, Lightbulb, Phone } from "lucide-react";
 import { JsonLd } from "@/components/JsonLd";
 import { Reveal } from "@/components/Reveal";
 import { serviceIcons, WhatsAppIcon } from "@/components/icons";
@@ -111,13 +111,6 @@ export default function HomePage() {
               WhatsApp
             </a>
           </div>
-          <Link
-            href="/servicios"
-            className="hero-item hero-d3 mt-5 inline-flex min-h-11 items-center gap-2 text-sm font-bold text-gold"
-          >
-            Ver los sistemas
-            <ArrowRight className="h-4 w-4" aria-hidden="true" />
-          </Link>
         </div>
       </section>
 
@@ -221,28 +214,50 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="container-protef py-14">
-        <div className="card grid gap-6 p-6 md:grid-cols-[1.2fr_.8fr] md:items-center md:p-8">
-          <div>
-            <h2 className="text-2xl font-extrabold text-nav">Mantención antes de la falla</h2>
-            <p className="mt-2 max-w-xl text-muted">
-              Un plan revisa el sistema con fecha. Sirve para edificios que prefieren no esperar a
-              que el portón o la cámara dejen de funcionar.
-            </p>
-          </div>
-          <div className="flex flex-wrap gap-3 md:justify-end">
-            <Link
-              href="/planes"
-              className="inline-flex min-h-11 items-center rounded-full bg-nav px-5 font-extrabold text-white"
-            >
-              Ver planes
-            </Link>
-            <Link
-              href="/mantencion"
-              className="inline-flex min-h-11 items-center rounded-full border border-nav/20 px-5 font-extrabold text-nav"
-            >
-              Qué incluye
-            </Link>
+      <section className="bg-white" aria-labelledby="mantencion-titulo">
+        <div className="container-protef py-16">
+          <div className="overflow-hidden rounded-[20px] border border-[rgba(5,28,56,.12)] shadow-[0_16px_40px_rgba(5,28,56,.08)] md:grid md:grid-cols-[1.35fr_.65fr]">
+            <div className="border-l-8 border-gold p-8 md:p-10">
+              <p className="inline-flex items-center gap-2 text-sm font-extrabold tracking-wide text-brand-dark uppercase">
+                <CalendarCheck className="h-4 w-4" aria-hidden="true" />
+                Planes de mantención
+              </p>
+              <h2
+                id="mantencion-titulo"
+                className="mt-3 max-w-xl text-[clamp(1.8rem,3vw,2.6rem)] leading-tight font-extrabold text-nav"
+              >
+                Mantención antes de la falla
+              </h2>
+              <p className="mt-4 max-w-xl text-lg text-muted">
+                Una visita con fecha, antes de que el portón o la cámara dejen de funcionar. El
+                plan queda para el edificio, no para el día de la urgencia.
+              </p>
+              <ul className="mt-6 grid gap-3 sm:grid-cols-3">
+                <li className="rounded-[12px] bg-[#eef4fa] px-4 py-3 text-sm font-bold text-nav">
+                  Visita con fecha
+                </li>
+                <li className="rounded-[12px] bg-[#eef4fa] px-4 py-3 text-sm font-bold text-nav">
+                  Diagnóstico en terreno
+                </li>
+                <li className="rounded-[12px] bg-[#eef4fa] px-4 py-3 text-sm font-bold text-nav">
+                  Seis sistemas, si el recinto los tiene
+                </li>
+              </ul>
+            </div>
+            <div className="flex flex-col justify-center gap-3 bg-[#f7fafc] p-8 md:p-10">
+              <Link
+                href="/planes"
+                className="inline-flex min-h-14 items-center justify-center rounded-full bg-gold px-6 text-lg font-extrabold text-nav"
+              >
+                Ver planes
+              </Link>
+              <Link
+                href="/mantencion"
+                className="inline-flex min-h-14 items-center justify-center rounded-full border border-nav/20 bg-white px-6 font-extrabold text-nav"
+              >
+                Qué incluye
+              </Link>
+            </div>
           </div>
         </div>
       </section>
