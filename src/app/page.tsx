@@ -195,6 +195,42 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="relative overflow-hidden border-y-4 border-gold text-white">
+        <Image
+          src={homePhotos.noche.src}
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-nav/70" />
+        <div className="container-protef relative grid items-center gap-6 py-16 md:grid-cols-[1.15fr_.85fr]">
+          <div>
+            <p className="text-sm font-extrabold tracking-wide text-gold uppercase">
+              Servicio técnico
+            </p>
+            <h2 className="mt-2 text-[clamp(1.8rem,3vw,2.6rem)] leading-tight font-extrabold">
+              ¿El sistema falló hoy?
+            </h2>
+            <p className="mt-3 max-w-xl text-white/90">
+              Si puede esperar el día hábil, escriba a{" "}
+              <a className="font-bold text-gold underline" href={`mailto:${site.email}`}>
+                {site.email}
+              </a>{" "}
+              o pida la cotización.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-3 md:justify-end">
+            <Link
+              href="/contacto"
+              className="inline-flex min-h-14 items-center rounded-full bg-white px-6 font-extrabold text-nav"
+            >
+              Pedir cotización
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-white" aria-labelledby="mantencion-titulo">
         <div className="container-protef py-16">
           <div className="overflow-hidden rounded-[20px] border border-[rgba(5,28,56,.12)] shadow-[0_16px_40px_rgba(5,28,56,.08)] md:grid md:grid-cols-[1.2fr_.8fr]">
@@ -239,42 +275,6 @@ export default function HomePage() {
                 Qué incluye
               </Link>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="relative overflow-hidden border-y-4 border-gold text-white">
-        <Image
-          src={homePhotos.noche.src}
-          alt=""
-          fill
-          sizes="100vw"
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-nav/70" />
-        <div className="container-protef relative grid items-center gap-6 py-16 md:grid-cols-[1.15fr_.85fr]">
-          <div>
-            <p className="text-sm font-extrabold tracking-wide text-gold uppercase">
-              Servicio técnico
-            </p>
-            <h2 className="mt-2 text-[clamp(1.8rem,3vw,2.6rem)] leading-tight font-extrabold">
-              ¿El sistema falló hoy?
-            </h2>
-            <p className="mt-3 max-w-xl text-white/90">
-              Si puede esperar el día hábil, escriba a{" "}
-              <a className="font-bold text-gold underline" href={`mailto:${site.email}`}>
-                {site.email}
-              </a>{" "}
-              o pida la cotización.
-            </p>
-          </div>
-          <div className="flex flex-wrap gap-3 md:justify-end">
-            <Link
-              href="/contacto"
-              className="inline-flex min-h-14 items-center rounded-full bg-white px-6 font-extrabold text-nav"
-            >
-              Pedir cotización
-            </Link>
           </div>
         </div>
       </section>
