@@ -46,7 +46,7 @@ export default function PrivacidadPage() {
         <section>
           <h2 className="text-xl font-extrabold text-nav">Cookies y medición</h2>
           <p className="mt-2">
-            Google Ads (identificador {site.adsId}) mide clics en el teléfono, en WhatsApp y el envío
+            Google Ads  mide clics en el teléfono, en WhatsApp y el envío
             del formulario. Esas cookies quedan bloqueadas hasta que usted acepta el aviso. “Solo
             necesarias” las mantiene apagadas. Puede borrar la elección borrando los datos del sitio
             en el navegador.
