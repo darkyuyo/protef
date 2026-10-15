@@ -29,13 +29,17 @@ export default function MantencionPage() {
           <p className="card p-4 font-bold">Urgencias de lunes a viernes, fuera del calendario</p>
         </section>
         <section className="grid items-center gap-6 lg:grid-cols-[.85fr_1.15fr]">
-          <figure className="relative h-72 overflow-hidden rounded-[20px] md:h-full md:min-h-80">
+          <figure
+            className="relative overflow-hidden rounded-[20px] lg:h-full lg:min-h-80"
+            style={{ aspectRatio: "16 / 10" }}
+          >
             <Image
               src={pagePhotos.visita.src}
               alt={pagePhotos.visita.alt}
               fill
               sizes="(min-width: 1024px) 38vw, 94vw"
               className="object-cover"
+              style={{ objectPosition: "center 42%" }}
             />
           </figure>
           <div>
