@@ -1,0 +1,21 @@
+{
+  "name": "PROTEF Seguridad Electrónica",
+  "short_name": "PROTEF",
+  "lang": "es-CL",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#051c38",
+  "theme_color": "#051c38",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
