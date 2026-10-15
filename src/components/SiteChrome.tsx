@@ -68,12 +68,10 @@ export function Header() {
         <div className="flex items-center gap-2">
           <a
             href={site.phoneTel}
-            className="pulse-urgent inline-flex min-h-11 items-center gap-2 rounded-full bg-gold px-4 text-sm font-extrabold text-nav"
+            className="pulse-urgent inline-flex h-11 w-11 items-center justify-center rounded-full bg-gold text-nav"
             aria-label={`Llamar ${site.phoneDisplay}`}
           >
             <Phone className="h-4 w-4" aria-hidden="true" />
-            <span className="sm:hidden">Llamar</span>
-            <span className="hidden sm:inline">{site.phoneDisplay}</span>
           </a>
           <a
             href={whatsappHref(defaultWhatsappText)}

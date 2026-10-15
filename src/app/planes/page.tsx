@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Reveal } from "@/components/Reveal";
 import { PageIntro } from "@/components/PageIntro";
 import { buildMetadata } from "@/lib/seo";
+import { pagePhotos } from "@/lib/photos";
 import { pageMeta, plans } from "@/lib/site.config";
 
 export const metadata = buildMetadata(pageMeta.planes);
@@ -10,6 +11,8 @@ export default function PlanesPage() {
   return (
     <>
       <PageIntro
+        eyebrow="Valores en UF"
+        image={pagePhotos.mantencion}
         crumbs={[
           { name: "Inicio", path: "/" },
           { name: "Planes", path: "/planes" },
@@ -17,7 +20,7 @@ export default function PlanesPage() {
         title="Planes de mantención preventiva en Concepción"
         lead="Valores referenciales según el tamaño de la infraestructura. Todos más IVA. La urgencia suelta no usa esta tabla: se cotiza aparte."
       />
-      <div className="container-protef py-10">
+      <div className="container-protef relative z-10 -mt-8 pb-10">
         <div className="grid gap-4 lg:grid-cols-4">
           {plans.map((plan, index) => (
             <Reveal key={plan.id} delay={index * 0.08}>
@@ -56,14 +59,6 @@ export default function PlanesPage() {
             </Reveal>
           ))}
         </div>
-        <p className="mt-6 text-sm text-muted">
-          Light es la revisión más espaciada. No es “mejor” por ser más barata al año: pasa más tiempo
-          entre visitas. Estándar es el plan que el sitio actual destaca. El alcance por rubro está en{" "}
-          <Link className="font-bold text-brand-dark underline" href="/mantencion">
-            mantención preventiva
-          </Link>
-          .
-        </p>
       </div>
     </>
   );

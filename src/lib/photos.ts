@@ -13,6 +13,29 @@ export const aboutPhoto: Photo = {
   alt: "Técnico revisando el gabinete de equipos de un edificio",
 };
 
+export const pagePhotos = {
+  servicios: {
+    src: "/fotos/vista-servicios.jpg",
+    alt: "Acceso peatonal de un edificio con portón, cámara y citófono",
+  },
+  mantencion: {
+    src: "/fotos/vista-mantencion.jpg",
+    alt: "Técnico revisando un gabinete eléctrico con una tablet",
+  },
+  contacto: {
+    src: "/fotos/vista-contacto.jpg",
+    alt: "Hall de un edificio con videoportero junto a la puerta de vidrio",
+  },
+  pasillo: {
+    src: "/fotos/pasillo-edificio.jpg",
+    alt: "Pasillo de un edificio con lector de acceso y detector en el cielo",
+  },
+  terreno: {
+    src: "/fotos/tecnico-terreno.jpg",
+    alt: "Dos técnicos revisando el gabinete del motor de un portón",
+  },
+} as const satisfies Record<string, Photo>;
+
 export const homePhotos = {
   edificio: {
     src: "/fotos/fondo-edificio.jpg",

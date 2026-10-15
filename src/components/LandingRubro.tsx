@@ -54,7 +54,7 @@ export function LandingRubro({ landing }: { landing: Landing }) {
           <div className="container-protef relative py-10 md:py-14">
             <Breadcrumbs items={crumbs} tone="dark" />
             <div className="mt-5">
-                <p className="hero-item inline-flex rounded-full border border-white/30 bg-white/10 px-3 py-1 text-xs font-extrabold uppercase tracking-wider">
+                <p className="hero-item inline-flex rounded-full border border-gold/50 bg-gold/15 px-3 py-1 text-xs font-extrabold tracking-wider text-gold uppercase">
                   {landing.eyebrow}
                 </p>
                 <h1 className="hero-item hero-d1 mt-4 max-w-4xl text-[clamp(1.8rem,4vw,3rem)] leading-tight font-extrabold">
@@ -87,27 +87,43 @@ export function LandingRubro({ landing }: { landing: Landing }) {
           </div>
         </header>
 
-        <div className="container-protef grid gap-8 py-10">
+        <div className="container-protef relative z-10 -mt-8 grid gap-8 pb-10">
           <Reveal>
-            <section className="card p-6">
-              <h2 className="text-2xl font-extrabold text-nav">{landing.failuresTitle}</h2>
-              <p className="mt-2 text-muted">{landing.failuresIntro}</p>
-              <ul className="mt-4 grid gap-2">
-                {landing.failures.map((item) => (
-                  <li key={item} className="flex gap-2">
-                    <span aria-hidden="true" className="font-bold text-brand-dark">
-                      •
-                    </span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
+            <section className="grid items-stretch gap-4 lg:grid-cols-[.9fr_1.1fr]">
+              {photo ? (
+                <figure
+                  className="relative min-h-72 overflow-hidden rounded-[20px]"
+                  style={{ position: "relative", minHeight: "20rem" }}
+                >
+                  <Image
+                    src={photo.src}
+                    alt={photo.alt}
+                    fill
+                    sizes="(min-width: 1024px) 40vw, 94vw"
+                    className="object-cover"
+                  />
+                </figure>
+              ) : null}
+              <div className="card p-6">
+                <h2 className="text-2xl font-extrabold text-nav">{landing.failuresTitle}</h2>
+                <p className="mt-2 text-muted">{landing.failuresIntro}</p>
+                <ul className="mt-4 grid gap-2">
+                  {landing.failures.map((item) => (
+                    <li key={item} className="flex gap-2">
+                      <span aria-hidden="true" className="font-bold text-brand-dark">
+                        •
+                      </span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </section>
           </Reveal>
 
           {landing.sections.map((section) => (
             <Reveal key={section.heading}>
-              <section>
+              <section className="card p-6 md:p-8">
                 <h2 className="text-2xl font-extrabold text-nav">{section.heading}</h2>
                 <div className="mt-3 grid gap-3 text-muted">
                   {section.paragraphs.map((paragraph) => (

@@ -4,7 +4,13 @@ import { serviceIcons } from "@/components/icons";
 import { servicePhoto } from "@/lib/photos";
 import type { Service } from "@/lib/site.config";
 
-export function ServiceCard({ service }: { service: Service }) {
+export function ServiceCard({
+  service,
+  detailed = false,
+}: {
+  service: Service;
+  detailed?: boolean;
+}) {
   const Icon = serviceIcons[service.icon];
   const photo = servicePhoto(service.id);
   return (
@@ -26,7 +32,10 @@ export function ServiceCard({ service }: { service: Service }) {
           <Icon aria-hidden="true" />
         </div>
       )}
-      <h3 className="p-5 text-center text-xl font-extrabold text-nav">{service.title}</h3>
+      <div className="p-5 text-center">
+        <h3 className="text-xl font-extrabold text-nav">{service.title}</h3>
+        {detailed ? <p className="mt-2 text-sm text-muted">{service.description}</p> : null}
+      </div>
     </Link>
   );
 }
