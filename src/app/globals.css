@@ -222,8 +222,3 @@ textarea.input {
   min-height: 8rem;
 }
 
-@media (max-width: 767px) {
-  .has-callbar {
-    padding-bottom: 5.25rem;
-  }
-}

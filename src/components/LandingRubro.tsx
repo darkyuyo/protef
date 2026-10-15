@@ -1,13 +1,14 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Phone } from "lucide-react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { CTA } from "@/components/CTA";
-import { FAQ } from "@/components/FAQ";
 import { JsonLd } from "@/components/JsonLd";
 import { Reveal } from "@/components/Reveal";
 import { WhatsAppIcon } from "@/components/icons";
 import { relatedServices, type Landing } from "@/content/landings";
 import { serviceGraph } from "@/lib/jsonld";
+import { servicePhoto } from "@/lib/photos";
 import { site, whatsappHref } from "@/lib/site.config";
 
 export function LandingRubro({ landing }: { landing: Landing }) {
@@ -17,6 +18,7 @@ export function LandingRubro({ landing }: { landing: Landing }) {
     { name: landing.h1, path: landing.path },
   ];
   const related = relatedServices(landing.id);
+  const photo = servicePhoto(landing.id);
 
   return (
     <>
@@ -26,12 +28,30 @@ export function LandingRubro({ landing }: { landing: Landing }) {
           name: landing.serviceName,
           description: landing.lead,
           crumbs,
-          faqs: landing.faqs.map((faq) => ({ question: faq.question, answer: faq.answer })),
         })}
       />
       <article>
-        <header className="hero-mesh surface-dark relative overflow-hidden border-b-4 border-gold text-white">
-          <div className="container-protef py-10 md:py-14">
+        <header className="surface-dark relative overflow-hidden border-b-4 border-gold text-white">
+          {photo ? (
+            <Image
+              src={photo.src}
+              alt=""
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover object-center"
+            />
+          ) : null}
+          <div
+            className="absolute inset-0"
+            style={{
+              position: "absolute",
+              inset: 0,
+              background:
+                "linear-gradient(105deg, rgba(5, 28, 56, 0.88) 0%, rgba(8, 72, 122, 0.74) 48%, rgba(0, 110, 170, 0.58) 100%)",
+            }}
+          />
+          <div className="container-protef relative py-10 md:py-14">
             <Breadcrumbs items={crumbs} tone="dark" />
             <div className="mt-5">
                 <p className="hero-item inline-flex rounded-full border border-white/30 bg-white/10 px-3 py-1 text-xs font-extrabold uppercase tracking-wider">
@@ -141,8 +161,6 @@ export function LandingRubro({ landing }: { landing: Landing }) {
               </div>
             </section>
           </Reveal>
-
-          <FAQ items={landing.faqs} />
 
           <section>
             <h2 className="text-2xl font-extrabold text-nav">Otros rubros en Concepción</h2>

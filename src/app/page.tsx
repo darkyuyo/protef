@@ -1,20 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Award, CalendarCheck, Headphones, Handshake, Lightbulb, Phone } from "lucide-react";
+import { ArrowRight, Award, CalendarCheck, Headphones, Handshake, Lightbulb } from "lucide-react";
 import { JsonLd } from "@/components/JsonLd";
 import { Reveal } from "@/components/Reveal";
-import { serviceIcons, WhatsAppIcon } from "@/components/icons";
+import { serviceIcons } from "@/components/icons";
 import { YearCounter } from "@/components/YearCounter";
 import { heroPhoto, homePhotos } from "@/lib/photos";
 import { buildMetadata } from "@/lib/seo";
-import {
-  defaultWhatsappText,
-  pageMeta,
-  services,
-  site,
-  whatsappHref,
-  yearsOfExperience,
-} from "@/lib/site.config";
+import { pageMeta, services, site, yearsOfExperience } from "@/lib/site.config";
 
 export const metadata = buildMetadata(pageMeta.home);
 
@@ -92,25 +85,13 @@ export default function HomePage() {
             Si el portón no abre, la cámara no graba o el cerco se apagó, llame. Un técnico sale a
             terreno en {site.communes.join(", ")}.
           </p>
-          <div className="hero-item hero-d3 mt-7 flex flex-wrap items-center gap-3">
-            <a
-              href={site.phoneTel}
-              className="inline-flex min-h-14 items-center gap-2 rounded-full bg-gold px-6 text-lg font-extrabold text-nav shadow-[0_10px_24px_rgba(0,0,0,.2)]"
-            >
-              <Phone className="h-5 w-5" aria-hidden="true" />
-              Llamar {site.phoneDisplay}
-            </a>
-            <a
-              href={whatsappHref(defaultWhatsappText)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex min-h-14 items-center gap-2 rounded-full border border-white/40 bg-white/10 px-6 font-bold"
-              aria-label="Escribir por WhatsApp a PROTEF sobre seguridad electrónica"
-            >
-              <WhatsAppIcon className="h-5 w-5 text-[#25d366]" />
-              WhatsApp
-            </a>
-          </div>
+          <Link
+            href="/servicios"
+            className="hero-item hero-d3 mt-6 inline-flex min-h-11 items-center gap-2 text-sm font-bold text-gold"
+          >
+            Ver los sistemas
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          </Link>
         </div>
       </section>
 
@@ -216,7 +197,7 @@ export default function HomePage() {
 
       <section className="bg-white" aria-labelledby="mantencion-titulo">
         <div className="container-protef py-16">
-          <div className="overflow-hidden rounded-[20px] border border-[rgba(5,28,56,.12)] shadow-[0_16px_40px_rgba(5,28,56,.08)] md:grid md:grid-cols-[1.35fr_.65fr]">
+          <div className="overflow-hidden rounded-[20px] border border-[rgba(5,28,56,.12)] shadow-[0_16px_40px_rgba(5,28,56,.08)] md:grid md:grid-cols-[1.2fr_.8fr]">
             <div className="border-l-8 border-gold p-8 md:p-10">
               <p className="inline-flex items-center gap-2 text-sm font-extrabold tracking-wide text-brand-dark uppercase">
                 <CalendarCheck className="h-4 w-4" aria-hidden="true" />
@@ -280,32 +261,14 @@ export default function HomePage() {
               ¿El sistema falló hoy?
             </h2>
             <p className="mt-3 max-w-xl text-white/90">
-              Llame primero. WhatsApp es el segundo camino. Si puede esperar el día hábil, pida la
-              cotización o escriba a{" "}
+              Si puede esperar el día hábil, escriba a{" "}
               <a className="font-bold text-gold underline" href={`mailto:${site.email}`}>
                 {site.email}
-              </a>
-              .
+              </a>{" "}
+              o pida la cotización.
             </p>
           </div>
           <div className="flex flex-wrap gap-3 md:justify-end">
-            <a
-              href={site.phoneTel}
-              className="inline-flex min-h-14 items-center gap-2 rounded-full bg-gold px-6 text-lg font-extrabold text-nav"
-            >
-              <Phone className="h-5 w-5" aria-hidden="true" />
-              {site.phoneDisplay}
-            </a>
-            <a
-              href={whatsappHref(defaultWhatsappText)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex min-h-14 items-center gap-2 rounded-full border border-white/40 px-6 font-bold"
-              aria-label="Escribir por WhatsApp a PROTEF sobre una falla de hoy"
-            >
-              <WhatsAppIcon className="h-5 w-5 text-[#25d366]" />
-              WhatsApp
-            </a>
             <Link
               href="/contacto"
               className="inline-flex min-h-14 items-center rounded-full bg-white px-6 font-extrabold text-nav"
