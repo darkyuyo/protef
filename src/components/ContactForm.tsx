@@ -60,7 +60,6 @@ export function ContactForm({ preset }: { preset?: string }) {
         setStatus("error");
         return;
       }
-      sessionStorage.setItem("protef_lead", "1");
       router.push("/gracias");
     } catch {
       setFormError("No pudimos enviar el mensaje. Llame o escriba por WhatsApp.");

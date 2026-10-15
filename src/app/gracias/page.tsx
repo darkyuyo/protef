@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { Phone } from "lucide-react";
-import { LeadEvent } from "@/components/Analytics";
 import { PageIntro } from "@/components/PageIntro";
 import { WhatsAppIcon } from "@/components/icons";
 import { homePhotos } from "@/lib/photos";
@@ -12,7 +11,6 @@ export const metadata = buildMetadata({ ...pageMeta.gracias, noindex: true });
 export default function GraciasPage() {
   return (
     <>
-      <LeadEvent />
       <PageIntro
         eyebrow="Solicitud enviada"
         image={homePhotos.noche}

@@ -14,7 +14,6 @@ export const site = {
   phoneE164: "+56982109253",
   phoneTel: "tel:+56982109253",
   whatsappNumber: "56982109253",
-  adsId: "AW-18242608384",
   locale: "es-CL",
   ogLocale: "es_CL",
   foundingYear: FOUNDING_YEAR,
@@ -329,7 +328,7 @@ export const pageMeta = {
     path: "/privacidad",
     title: "Privacidad y datos personales | PROTEF",
     description:
-      "Cómo PROTEF trata los datos del formulario de contacto y las cookies de medición en protef.cl, según la normativa chilena de datos vigente hoy.",
+      "Cómo PROTEF trata los datos del formulario de contacto en protef.cl, según la normativa chilena de datos vigente hoy.",
   },
   gracias: {
     path: "/gracias",

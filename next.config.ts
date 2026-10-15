@@ -2,27 +2,15 @@ import type { NextConfig } from "next";
 
 const isDev = process.env.NODE_ENV !== "production";
 
-const scriptSrc = [
-  "'self'",
-  "'unsafe-inline'",
-  isDev ? "'unsafe-eval'" : "",
-  "https://www.googletagmanager.com",
-  "https://www.googleadservices.com",
-  "https://googleads.g.doubleclick.net",
-  "https://www.google.com",
-  "https://pagead2.googlesyndication.com",
-]
-  .filter(Boolean)
-  .join(" ");
+const scriptSrc = ["'self'", "'unsafe-inline'", isDev ? "'unsafe-eval'" : ""].filter(Boolean).join(" ");
 
 const csp = [
   "default-src 'self'",
   `script-src ${scriptSrc}`,
   "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com https://googleads.g.doubleclick.net https://www.google.com https://pagead2.googlesyndication.com",
+  "img-src 'self' data:",
   "font-src 'self'",
-  "connect-src 'self' https://www.google-analytics.com https://www.googletagmanager.com https://googleads.g.doubleclick.net https://stats.g.doubleclick.net https://www.google.com https://www.googleadservices.com https://pagead2.googlesyndication.com",
-  "frame-src https://www.googletagmanager.com https://bid.g.doubleclick.net https://td.doubleclick.net",
+  "connect-src 'self'",
   "object-src 'none'",
   "base-uri 'self'",
   "form-action 'self'",

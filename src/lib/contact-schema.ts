@@ -46,7 +46,6 @@ export const contactSchema = z.object({
   utm_campaign: optionalText,
   utm_term: optionalText,
   utm_content: optionalText,
-  gclid: optionalText,
 });
 
 export type ContactInput = z.infer<typeof contactSchema>;

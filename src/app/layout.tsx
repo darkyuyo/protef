@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import type { ReactNode } from "react";
-import Script from "next/script";
 
 const inter = localFont({
   src: [
@@ -34,7 +33,6 @@ const inter = localFont({
   display: "swap",
   adjustFontFallback: "Arial",
 });
-import { CookieNotice } from "@/components/CookieNotice";
 import { JsonLd } from "@/components/JsonLd";
 import { Footer, Header, UrgentStrip } from "@/components/SiteChrome";
 import { TrackClicks } from "@/components/Analytics";
@@ -84,15 +82,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <Header />
         <main id="contenido">{children}</main>
         <Footer />
-        <CookieNotice />
         <TrackClicks />
-        <Script id="consent-flag" strategy="beforeInteractive">
-          {`try{if(localStorage.getItem('protef_consent'))document.documentElement.dataset.consent='1'}catch(e){}`}
-        </Script>
-        <Script id="gtag-loader" strategy="lazyOnload" src={`https://www.googletagmanager.com/gtag/js?id=${site.adsId}`} />
-        <Script id="gtag-init" strategy="lazyOnload">
-          {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;gtag('js',new Date());var consent='denied';try{if(localStorage.getItem('protef_consent')==='granted')consent='granted';}catch(e){}gtag('consent','default',{ad_storage:consent,analytics_storage:consent,ad_user_data:consent,ad_personalization:consent,wait_for_update:500});gtag('config','${site.adsId}');`}
-        </Script>
       </body>
     </html>
   );

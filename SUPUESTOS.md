@@ -9,7 +9,7 @@ Decisiones tomadas porque el encargo no las cerraba o porque el material actual 
 - Se apagó `cacheComponents`. El proyecto nuevo no usa el modelo de caché parcial: las páginas se prerenderizan enteras.
 - Fuentes con `@fontsource/inter` (subset latin). Estilos con Tailwind v4 y los tokens de color en `src/app/globals.css`.
 - Animación de entrada con `motion` (`whileInView`, una vez). El H1 no parte en opacidad 0: la entrada del hero es solo `transform`. `prefers-reduced-motion` y `scripting: none` fuerzan el contenido visible.
-- CSP con `'unsafe-inline'` en scripts. Las páginas estáticas no pueden firmar un nonce por request. Hace falta para el bootstrap de Next y para gtag. En desarrollo se suma `'unsafe-eval'` para Turbopack.
+- CSP con `'unsafe-inline'` en scripts. Las páginas estáticas no pueden firmar un nonce por request. Hace falta para el bootstrap de Next. En desarrollo se suma `'unsafe-eval'` para Turbopack. El sitio no carga Google Ads ni otra etiqueta de medición.
 
 ## Negocio
 

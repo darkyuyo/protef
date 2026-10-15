@@ -76,7 +76,6 @@ export function buildContactEmail(data: ContactMail, receivedAt = new Date()) {
     ["Campaña", data.utm_campaign || ""],
     ["Término", data.utm_term || ""],
     ["Anuncio", data.utm_content || ""],
-    ["gclid", data.gclid || ""],
   ].filter((entry): entry is [string, string] => entry[1].trim().length > 0);
 
   const actions = [

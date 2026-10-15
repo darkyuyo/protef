@@ -30,7 +30,7 @@ export default function PrivacidadPage() {
           <h2 className="text-xl font-extrabold text-nav">Datos del formulario</h2>
           <p className="mt-2">
             Si envía el formulario guardamos nombre o edificio, correo, teléfono, tipo de servicio y
-            mensaje, además de la página de origen y, si vienen en el enlace, parámetros UTM o gclid.
+            mensaje, además de la página de origen y, si vienen en el enlace, los parámetros de la campaña.
             Sirven solo para responder la cotización o la visita. El envío sale por Gmail hacia{" "}
             {site.email}. No se usa esa base para otra campaña.
           </p>
@@ -44,12 +44,10 @@ export default function PrivacidadPage() {
           </p>
         </section>
         <section>
-          <h2 className="text-xl font-extrabold text-nav">Cookies y medición</h2>
+          <h2 className="text-xl font-extrabold text-nav">Cookies</h2>
           <p className="mt-2">
-            Google Ads  mide clics en el teléfono, en WhatsApp y el envío
-            del formulario. Esas cookies quedan bloqueadas hasta que usted acepta el aviso. “Solo
-            necesarias” las mantiene apagadas. Puede borrar la elección borrando los datos del sitio
-            en el navegador.
+            Este sitio no instala cookies de publicidad ni de medición. No hay aviso de cookies porque
+            no se usan para seguir visitas, clics ni envíos del formulario.
           </p>
         </section>
         <section>
