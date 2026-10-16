@@ -22,21 +22,19 @@ export default function MantencionPage() {
         title="Mantención preventiva de seguridad electrónica en Concepción"
         lead="Visitas programadas, diagnóstico en terreno e informes para que el edificio mantenga CCTV, cercos, portones, citofonía, accesos y alarmas sin sorpresas."
       />
-      <div className="container-protef relative z-10 -mt-8 grid gap-8 pb-10">
-        <section className="grid gap-3 sm:grid-cols-3">
+      <div className="container-protef relative z-10 -mt-8 grid min-w-0 gap-8 pb-10">
+        <section className="grid min-w-0 gap-3 sm:grid-cols-3">
           <p className="card p-4 font-bold">6 rubros en la misma visita, si el recinto los tiene</p>
           <p className="card p-4 font-bold">Cercos revisados conforme a normativa SEC</p>
           <p className="card p-4 font-bold">Urgencias de lunes a viernes, fuera del calendario</p>
         </section>
-        <section className="grid items-center gap-6 lg:grid-cols-[.85fr_1.15fr]">
-          <figure
-            className="relative overflow-hidden rounded-[20px] lg:h-full lg:min-h-80"
-            style={{ aspectRatio: "16 / 10" }}
-          >
+        <section className="grid min-w-0 items-center gap-6 lg:grid-cols-[.85fr_1.15fr]">
+          <figure className="relative h-72 w-full min-w-0 overflow-hidden rounded-[20px] md:h-96 lg:h-full lg:min-h-80">
             <Image
               src={pagePhotos.visita.src}
               alt={pagePhotos.visita.alt}
               fill
+              loading="eager"
               sizes="(min-width: 1024px) 38vw, 94vw"
               className="object-cover"
               style={{ objectPosition: "center 42%" }}
@@ -57,7 +55,7 @@ export default function MantencionPage() {
             </p>
           </div>
         </section>
-        <section>
+        <section className="min-w-0">
           <h2 className="text-2xl font-extrabold text-nav">Qué incluye cada rubro</h2>
           <p className="mt-2 mb-4 text-muted">
             Elija el sistema para ver el alcance de la visita. Los seis textos están en esta página.

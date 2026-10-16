@@ -24,11 +24,11 @@ export function MaintenanceTabs({ items }: { items: MaintenanceRubro[] }) {
   };
 
   return (
-    <div>
+    <div className="min-w-0">
       <div
         role="tablist"
         aria-label="Rubros de mantención"
-        className="flex gap-2 overflow-x-auto pb-2"
+        className="flex flex-wrap gap-2"
         onKeyDown={onKeyDown}
       >
         {items.map((item) => {
@@ -43,7 +43,7 @@ export function MaintenanceTabs({ items }: { items: MaintenanceRubro[] }) {
               aria-selected={selected}
               aria-controls={`panel-${item.id}`}
               tabIndex={selected ? 0 : -1}
-              className={`inline-flex min-h-11 shrink-0 items-center gap-2 rounded-full border px-4 text-sm font-bold transition duration-200 hover:-translate-y-0.5 ${
+              className={`inline-flex min-h-11 items-center gap-2 rounded-full border px-4 text-sm font-bold transition duration-200 hover:-translate-y-0.5 ${
                 selected
                   ? "border-nav bg-nav text-white hover:border-gold hover:bg-gold hover:text-nav"
                   : "border-[rgba(5,28,56,.14)] bg-white text-nav hover:border-nav hover:bg-nav hover:text-white"

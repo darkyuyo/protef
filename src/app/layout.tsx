@@ -72,7 +72,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="es-CL" suppressHydrationWarning>
+    <html lang="es-CL" data-scroll-behavior="smooth" suppressHydrationWarning>
       <body className={inter.className}>
         <a className="skip-link" href="#contenido">
           Saltar al contenido
