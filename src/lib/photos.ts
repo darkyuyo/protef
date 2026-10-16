@@ -48,12 +48,6 @@ export const teamPhotos: TeamPhoto[] = [
     caption: "Cableado del automatismo",
     focus: "center 30%",
   },
-  {
-    src: "/fotos/equipo/conexion-motor.jpg",
-    alt: "Técnico revisando la conexión del motor junto al riel del portón",
-    caption: "Puesta en marcha",
-    focus: "center 32%",
-  },
 ];
 
 export const pagePhotos = {
