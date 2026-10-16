@@ -34,7 +34,7 @@ export default function NosotrosPage() {
         title="Integradores de seguridad electrónica en Concepción"
         lead={`Desde ${site.foundingYear} proyectamos, instalamos y damos soporte a videovigilancia, accesos controlados, facial, huella y con tarjetas de proximidad, citofonía, protección perimetral y señales débiles para el sector inmobiliario e industrial del Biobío.`}
       />
-      <div className="container-protef relative z-10 -mt-8">
+      <div className="container-protef mt-8">
         <section className="grid gap-4 md:grid-cols-3">
           <article className="card p-5">
             <p className="text-3xl font-extrabold text-nav">

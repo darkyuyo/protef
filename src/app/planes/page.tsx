@@ -22,7 +22,7 @@ export default function PlanesPage() {
         title="Planes de mantención preventiva en Concepción"
         lead="Valores referenciales según el tamaño de la infraestructura. Todos más IVA. La urgencia suelta no usa esta tabla: se cotiza aparte."
       />
-      <div className="container-protef relative z-10 -mt-8 pb-10">
+      <div className="container-protef mt-8 pb-10">
         <div className="grid gap-4 lg:grid-cols-4">
           {plans.map((plan, index) => (
             <Reveal key={plan.id} delay={index * 0.08}>

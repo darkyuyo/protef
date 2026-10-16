@@ -32,7 +32,7 @@ export default function ServiciosPage() {
           { name: "Servicios", path: "/servicios" },
         ]}
       />
-      <section className="container-protef relative z-10 -mt-8 pb-12" aria-labelledby="rubros-titulo">
+      <section className="container-protef mt-8 pb-12" aria-labelledby="rubros-titulo">
         <h2 id="rubros-titulo" className="sr-only">
           Sistemas en los que trabajamos
         </h2>

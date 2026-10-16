@@ -22,7 +22,7 @@ export default function MantencionPage() {
         title="Mantención preventiva de seguridad electrónica en Concepción"
         lead="Visitas programadas, diagnóstico en terreno e informes para que el edificio mantenga CCTV, cercos, portones, citofonía, accesos y alarmas sin sorpresas."
       />
-      <div className="container-protef relative z-10 -mt-8 grid min-w-0 gap-8 pb-10">
+      <div className="container-protef mt-8 grid min-w-0 gap-8 pb-10">
         <section className="grid min-w-0 gap-3 sm:grid-cols-3">
           <p className="card p-4 font-bold">6 rubros en la misma visita, si el recinto los tiene</p>
           <p className="card p-4 font-bold">Cercos revisados conforme a normativa SEC</p>

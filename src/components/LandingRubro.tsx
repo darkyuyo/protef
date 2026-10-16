@@ -43,43 +43,44 @@ export function LandingRubro({ landing }: { landing: Landing }) {
             />
           ) : null}
           <div className="hero-veil absolute inset-0" />
-          <div className="container-protef relative py-10 md:py-14">
+          <div className="container-protef relative py-12 md:py-16">
             <Breadcrumbs items={crumbs} tone="dark" />
             <div className="mt-5">
-                <p className="hero-item inline-flex rounded-full border border-gold/50 bg-gold/15 px-3 py-1 text-xs font-extrabold tracking-wider text-gold uppercase">
+                <p className="hero-item inline-flex w-fit rounded-full border border-gold/50 bg-gold/15 px-3 py-1 text-xs font-extrabold tracking-wider text-gold uppercase">
                   {landing.eyebrow}
                 </p>
-                <h1 className="hero-item hero-d1 mt-4 max-w-4xl text-[clamp(1.8rem,4vw,3rem)] leading-tight font-extrabold">
+                <h1 className="hero-item hero-d1 mt-4 max-w-4xl text-[clamp(1.65rem,3.2vw,2.5rem)] leading-[1.12] font-extrabold">
                   {landing.h1}
                 </h1>
-                <p className="hero-item hero-d2 mt-4 max-w-3xl text-lg text-white/90">
-                  {landing.lead}
-                </p>
-                <div className="hero-item hero-d3 mt-6 flex flex-wrap gap-3">
-                  <a
-                    href={site.phoneTel}
-                    className="pulse-urgent inline-flex min-h-11 items-center gap-2 rounded-full bg-gold px-5 font-extrabold text-nav"
-                    aria-label={`Llamar a PROTEF al ${site.phoneDisplay}`}
-                  >
-                    <Phone className="h-4 w-4" aria-hidden="true" />
-                    Urgencia: llamar ahora
-                  </a>
-                  <a
-                    href={whatsappHref(landing.waText)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/40 px-5 font-bold"
-                    aria-label={`Escribir por WhatsApp a PROTEF: ${landing.h1}`}
-                  >
-                    <WhatsAppIcon className="h-5 w-5 text-[#25d366]" />
-                    WhatsApp
-                  </a>
-                </div>
             </div>
           </div>
         </header>
 
-        <div className="container-protef relative z-10 -mt-8 grid gap-8 pb-10">
+        <div className="container-protef pt-8">
+          <p className="max-w-2xl text-lg">{landing.lead}</p>
+          <div className="mt-5 flex flex-wrap gap-3">
+            <a
+              href={site.phoneTel}
+              className="pulse-urgent inline-flex min-h-11 items-center gap-2 rounded-full bg-gold px-5 font-extrabold text-nav"
+              aria-label={`Llamar a PROTEF al ${site.phoneDisplay}`}
+            >
+              <Phone className="h-4 w-4" aria-hidden="true" />
+              Urgencia: llamar ahora
+            </a>
+            <a
+              href={whatsappHref(landing.waText)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-11 items-center gap-2 rounded-full border border-nav/20 bg-white px-5 font-bold text-nav"
+              aria-label={`Escribir por WhatsApp a PROTEF: ${landing.h1}`}
+            >
+              <WhatsAppIcon className="h-5 w-5 text-[#25d366]" />
+              WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div className="container-protef mt-8 grid gap-8 pb-10">
           <Reveal>
             <section className="grid items-stretch gap-4 lg:grid-cols-[.9fr_1.1fr]">
               {photo ? (

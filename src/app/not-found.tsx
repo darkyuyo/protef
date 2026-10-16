@@ -23,7 +23,7 @@ export default function NotFound() {
         title="No encontramos esa página"
         lead="El enlace puede ser de una pestaña antigua del sitio. Estos son los servicios con dirección propia."
       />
-    <div className="container-protef relative z-10 -mt-8 pb-16">
+    <div className="container-protef mt-8 pb-16">
       <div className="card p-6">
       <ul className="grid gap-2">
         {services.map((service) => (

@@ -18,7 +18,7 @@ export default function PrivacidadPage() {
         title="Privacidad y datos personales"
         lead="Qué datos pide este sitio, para qué se usan y cómo pedir que se corrijan o eliminen."
       />
-      <div className="container-protef relative z-10 -mt-8 mb-12 grid max-w-3xl gap-5 rounded-[20px] bg-white p-6 text-muted shadow-[0_16px_40px_rgba(5,28,56,.08)] md:p-8">
+      <div className="container-protef mt-8 mb-12 grid max-w-3xl gap-5 rounded-[20px] bg-white p-6 text-muted shadow-[0_16px_40px_rgba(5,28,56,.08)] md:p-8">
         <section>
           <h2 className="text-xl font-extrabold text-nav">Responsable</h2>
           <p className="mt-2">

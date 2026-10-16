@@ -21,7 +21,7 @@ export default function ContactoPage() {
         title="Hablemos de la reparación o de la cotización"
         lead="La llamada es el camino más rápido. WhatsApp es el segundo. El formulario queda para dejar el nombre del edificio y el rubro."
       />
-      <div className="container-protef relative z-10 -mt-8 grid gap-6 pb-10 lg:grid-cols-[0.8fr_1.2fr]">
+      <div className="container-protef mt-8 grid gap-6 pb-10 lg:grid-cols-[0.8fr_1.2fr]">
         <aside className="card h-fit p-6">
           <h2 className="text-xl font-extrabold text-nav">Datos de contacto</h2>
           <ul className="mt-4 grid gap-3 text-sm">

@@ -74,28 +74,31 @@ export default function HomePage() {
               "linear-gradient(90deg, rgba(5, 16, 28, 0.72) 0%, rgba(5, 16, 28, 0.28) 36%, rgba(0, 0, 0, 0) 62%)",
           }}
         />
-        <div className="container-protef relative py-16 md:py-24">
-          <p className="hero-item inline-flex rounded-full border border-gold/50 bg-gold/15 px-3 py-1 text-xs font-extrabold tracking-wider text-gold uppercase">
+        <div className="container-protef relative py-12 md:py-16">
+          <p className="hero-item inline-flex w-fit rounded-full border border-gold/50 bg-gold/15 px-3 py-1 text-xs font-extrabold tracking-wider text-gold uppercase">
             Concepción · desde {site.foundingYear}
           </p>
-          <h1 className="hero-item hero-d1 mt-4 max-w-3xl text-[clamp(2.2rem,5.4vw,4rem)] leading-[1.05] font-extrabold">
+          <h1 className="hero-item hero-d1 mt-4 max-w-3xl text-[clamp(1.65rem,3.2vw,2.5rem)] leading-[1.12] font-extrabold">
             Seguridad electrónica para edificios y condominios
           </h1>
-          <p className="hero-item hero-d2 mt-5 max-w-xl text-lg text-white/90">
-            Si el portón no abre, la cámara no graba o el cerco se apagó, llame. Un técnico sale a
-            terreno en {site.communes.join(", ")}.
-          </p>
-          <Link
-            href="/servicios"
-            className="hero-item hero-d3 mt-6 inline-flex min-h-11 items-center gap-2 text-sm font-bold text-gold"
-          >
-            Ver los sistemas
-            <ArrowRight className="h-4 w-4" aria-hidden="true" />
-          </Link>
         </div>
       </section>
 
-      <section className="container-protef relative z-10 -mt-8">
+      <section className="container-protef pt-8">
+        <p className="max-w-xl text-lg">
+          Si el portón no abre, la cámara no graba o el cerco se apagó, llame. Un técnico sale a
+          terreno en {site.communes.join(", ")}.
+        </p>
+        <Link
+          href="/servicios"
+          className="mt-4 inline-flex min-h-11 items-center gap-2 text-sm font-bold text-nav"
+        >
+          Ver los sistemas
+          <ArrowRight className="h-4 w-4" aria-hidden="true" />
+        </Link>
+      </section>
+
+      <section className="container-protef mt-8">
         <dl className="grid gap-3 sm:grid-cols-3">
           <div className="card p-5">
             <dt className="text-xs font-bold tracking-wide text-muted uppercase">Trayectoria</dt>
@@ -198,21 +201,14 @@ export default function HomePage() {
           className="object-cover"
         />
         <div className="hero-veil absolute inset-0" />
-        <div className="container-protef relative grid items-center gap-6 py-16 md:grid-cols-[1.15fr_.85fr]">
+        <div className="container-protef relative grid items-center gap-6 py-14 md:grid-cols-[1.15fr_.85fr] md:py-16">
           <div>
             <p className="text-sm font-extrabold tracking-wide text-gold uppercase">
               Servicio técnico
             </p>
-            <h2 className="mt-2 text-[clamp(1.8rem,3vw,2.6rem)] leading-tight font-extrabold">
+            <h2 className="mt-2 text-[clamp(1.5rem,2.6vw,2.15rem)] leading-tight font-extrabold">
               ¿El sistema falló hoy?
             </h2>
-            <p className="mt-3 max-w-xl text-white/90">
-              Si puede esperar el día hábil, escriba a{" "}
-              <a className="font-bold text-gold underline" href={`mailto:${site.email}`}>
-                {site.email}
-              </a>{" "}
-              o pida la cotización.
-            </p>
           </div>
           <div className="flex flex-wrap gap-3 md:justify-end">
             <Link
@@ -223,6 +219,16 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
+      </section>
+
+      <section className="container-protef py-8">
+        <p className="max-w-xl text-lg">
+          Si puede esperar el día hábil, escriba a{" "}
+          <a className="font-bold text-nav underline" href={`mailto:${site.email}`}>
+            {site.email}
+          </a>{" "}
+          o pida la cotización.
+        </p>
       </section>
 
       <section className="bg-white" aria-labelledby="mantencion-titulo">
