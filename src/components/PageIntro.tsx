@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { HeroTitle } from "@/components/HeroTitle";
 import type { Crumb } from "@/lib/jsonld";
 import type { Photo } from "@/lib/photos";
 
@@ -39,9 +40,11 @@ export function PageIntro({
               {eyebrow}
             </p>
           ) : null}
-          <h1 className={`hero-item hero-d1 mt-4 ${titleClassName} text-[clamp(1.65rem,3.2vw,2.5rem)] leading-[1.12] font-extrabold`}>
+          <HeroTitle
+            className={`hero-item hero-d1 mt-4 ${titleClassName} text-[clamp(1.65rem,3.2vw,2.5rem)] leading-[1.12] font-extrabold`}
+          >
             {title}
-          </h1>
+          </HeroTitle>
         </div>
       </header>
       <div className="container-protef pt-8">

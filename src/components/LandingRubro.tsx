@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Phone } from "lucide-react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { HeroTitle } from "@/components/HeroTitle";
 import { CTA } from "@/components/CTA";
 import { JsonLd } from "@/components/JsonLd";
 import { Reveal } from "@/components/Reveal";
@@ -49,9 +50,9 @@ export function LandingRubro({ landing }: { landing: Landing }) {
                 <p className="hero-item inline-flex w-fit rounded-full border border-gold/50 bg-gold/15 px-3 py-1 text-xs font-extrabold tracking-wider text-gold uppercase">
                   {landing.eyebrow}
                 </p>
-                <h1 className="hero-item hero-d1 mt-4 max-w-4xl text-[clamp(1.65rem,3.2vw,2.5rem)] leading-[1.12] font-extrabold">
+                <HeroTitle className="hero-item hero-d1 mt-4 max-w-4xl text-[clamp(1.65rem,3.2vw,2.5rem)] leading-[1.12] font-extrabold">
                   {landing.h1}
-                </h1>
+                </HeroTitle>
             </div>
           </div>
         </header>

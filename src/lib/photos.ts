@@ -60,8 +60,8 @@ export const pagePhotos = {
     alt: "Técnico revisando un gabinete eléctrico con una tablet",
   },
   planes: {
-    src: "/fotos/vista-planes-mesa.jpg",
-    alt: "Mesa de madera con papeles, cuaderno y notas para planificar",
+    src: "/fotos/vista-planes-electronica.jpg",
+    alt: "Acceso de un edificio con citófono, cámara y gabinete de seguridad electrónica abierto",
   },
   contacto: {
     src: "/fotos/vista-contacto.jpg",

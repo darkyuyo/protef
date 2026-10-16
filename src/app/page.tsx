@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Award, CalendarCheck, Headphones, Handshake, Lightbulb } from "lucide-react";
+import { HeroTitle } from "@/components/HeroTitle";
 import { JsonLd } from "@/components/JsonLd";
 import { Reveal } from "@/components/Reveal";
 import { serviceIcons } from "@/components/icons";
@@ -78,9 +79,9 @@ export default function HomePage() {
           <p className="hero-item inline-flex w-fit rounded-full border border-gold/50 bg-gold/15 px-3 py-1 text-xs font-extrabold tracking-wider text-gold uppercase">
             Concepción · desde {site.foundingYear}
           </p>
-          <h1 className="hero-item hero-d1 mt-4 max-w-3xl text-[clamp(1.65rem,3.2vw,2.5rem)] leading-[1.12] font-extrabold">
+          <HeroTitle className="hero-item hero-d1 mt-4 max-w-3xl text-[clamp(1.65rem,3.2vw,2.5rem)] leading-[1.12] font-extrabold">
             Seguridad electrónica para edificios y condominios
-          </h1>
+          </HeroTitle>
         </div>
       </section>
 
@@ -206,9 +207,12 @@ export default function HomePage() {
             <p className="text-sm font-extrabold tracking-wide text-gold uppercase">
               Servicio técnico
             </p>
-            <h2 className="mt-2 text-[clamp(1.5rem,2.6vw,2.15rem)] leading-tight font-extrabold">
+            <HeroTitle
+              as="h2"
+              className="mt-2 text-[clamp(1.5rem,2.6vw,2.15rem)] leading-tight font-extrabold"
+            >
               ¿El sistema falló hoy?
-            </h2>
+            </HeroTitle>
           </div>
           <div className="flex flex-wrap gap-3 md:justify-end">
             <Link

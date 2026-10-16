@@ -13,7 +13,7 @@ export default function PlanesPage() {
       <PageIntro
         eyebrow="Valores en UF"
         image={pagePhotos.planes}
-        imagePosition="object-[22%_center]"
+        imagePosition="object-center"
         titleClassName="max-w-xl"
         crumbs={[
           { name: "Inicio", path: "/" },
