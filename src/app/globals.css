@@ -127,10 +127,10 @@ svg {
 
 .hero-veil {
   background: linear-gradient(
-    105deg,
-    rgba(5, 28, 56, 0.84) 0%,
-    rgba(8, 72, 122, 0.68) 42%,
-    rgba(0, 110, 170, 0.5) 100%
+    90deg,
+    rgba(5, 16, 28, 0.72) 0%,
+    rgba(5, 16, 28, 0.28) 36%,
+    transparent 62%
   );
 }
 

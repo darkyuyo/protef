@@ -8,12 +8,16 @@ export function PageIntro({
   lead,
   crumbs,
   image,
+  imagePosition = "object-center",
+  titleClassName = "max-w-4xl",
   eyebrow,
 }: {
   title: string;
   lead: string;
   crumbs: Crumb[];
   image: Photo;
+  imagePosition?: string;
+  titleClassName?: string;
   eyebrow?: string;
 }) {
   return (
@@ -24,17 +28,9 @@ export function PageIntro({
         fill
         priority
         sizes="100vw"
-        className="object-cover object-center"
+        className={`object-cover ${imagePosition}`}
       />
-      <div
-        className="absolute inset-0"
-        style={{
-          position: "absolute",
-          inset: 0,
-          background:
-            "linear-gradient(105deg, rgba(5, 28, 56, 0.88) 0%, rgba(8, 72, 122, 0.72) 46%, rgba(0, 110, 170, 0.55) 100%)",
-        }}
-      />
+      <div className="hero-veil absolute inset-0" />
       <div className="container-protef relative py-14 md:py-20">
         <Breadcrumbs items={crumbs} tone="dark" />
         {eyebrow ? (
@@ -42,7 +38,7 @@ export function PageIntro({
             {eyebrow}
           </p>
         ) : null}
-        <h1 className="hero-item hero-d1 mt-4 max-w-4xl text-[clamp(2rem,4.5vw,3.4rem)] leading-[1.08] font-extrabold">
+        <h1 className={`hero-item hero-d1 mt-4 ${titleClassName} text-[clamp(2rem,4.5vw,3.4rem)] leading-[1.08] font-extrabold`}>
           {title}
         </h1>
         <p className="hero-item hero-d2 mt-4 max-w-2xl text-lg text-white/90">{lead}</p>

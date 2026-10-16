@@ -4,8 +4,8 @@ export type Photo = {
 };
 
 export const heroPhoto: Photo = {
-  src: "/fotos/hero.webp",
-  alt: "Acceso de un condominio con portón de metal y una cámara bajo el alero",
+  src: "/fotos/hero-acceso.jpg",
+  alt: "Acceso de un edificio con cámara y videoportero",
 };
 
 export const aboutPhoto: Photo = {
@@ -58,6 +58,10 @@ export const pagePhotos = {
   mantencion: {
     src: "/fotos/vista-mantencion.jpg",
     alt: "Técnico revisando un gabinete eléctrico con una tablet",
+  },
+  planes: {
+    src: "/fotos/vista-planes-mesa.jpg",
+    alt: "Mesa de madera con papeles, cuaderno y notas para planificar",
   },
   contacto: {
     src: "/fotos/vista-contacto.jpg",

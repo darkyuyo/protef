@@ -42,15 +42,7 @@ export function LandingRubro({ landing }: { landing: Landing }) {
               className="object-cover object-center"
             />
           ) : null}
-          <div
-            className="absolute inset-0"
-            style={{
-              position: "absolute",
-              inset: 0,
-              background:
-                "linear-gradient(105deg, rgba(5, 28, 56, 0.88) 0%, rgba(8, 72, 122, 0.74) 48%, rgba(0, 110, 170, 0.58) 100%)",
-            }}
-          />
+          <div className="hero-veil absolute inset-0" />
           <div className="container-protef relative py-10 md:py-14">
             <Breadcrumbs items={crumbs} tone="dark" />
             <div className="mt-5">

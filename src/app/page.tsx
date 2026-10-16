@@ -63,7 +63,7 @@ export default function HomePage() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[70%_center]"
+          className="object-cover object-[62%_center]"
         />
         <div
           className="hero-veil absolute inset-0"
@@ -71,7 +71,7 @@ export default function HomePage() {
             position: "absolute",
             inset: 0,
             background:
-              "linear-gradient(105deg, rgba(5, 28, 56, 0.84) 0%, rgba(8, 72, 122, 0.68) 42%, rgba(0, 110, 170, 0.5) 100%)",
+              "linear-gradient(90deg, rgba(5, 16, 28, 0.72) 0%, rgba(5, 16, 28, 0.28) 36%, rgba(0, 0, 0, 0) 62%)",
           }}
         />
         <div className="container-protef relative py-16 md:py-24">
@@ -197,7 +197,7 @@ export default function HomePage() {
           sizes="100vw"
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-nav/70" />
+        <div className="hero-veil absolute inset-0" />
         <div className="container-protef relative grid items-center gap-6 py-16 md:grid-cols-[1.15fr_.85fr]">
           <div>
             <p className="text-sm font-extrabold tracking-wide text-gold uppercase">

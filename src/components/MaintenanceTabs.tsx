@@ -43,8 +43,10 @@ export function MaintenanceTabs({ items }: { items: MaintenanceRubro[] }) {
               aria-selected={selected}
               aria-controls={`panel-${item.id}`}
               tabIndex={selected ? 0 : -1}
-              className={`inline-flex min-h-11 shrink-0 items-center gap-2 rounded-full border px-4 text-sm font-bold ${
-                selected ? "border-nav bg-nav text-white" : "border-[rgba(5,28,56,.14)] bg-white text-nav"
+              className={`inline-flex min-h-11 shrink-0 items-center gap-2 rounded-full border px-4 text-sm font-bold transition duration-200 hover:-translate-y-0.5 ${
+                selected
+                  ? "border-nav bg-nav text-white hover:border-gold hover:bg-gold hover:text-nav"
+                  : "border-[rgba(5,28,56,.14)] bg-white text-nav hover:border-nav hover:bg-nav hover:text-white"
               }`}
               onClick={() => setActive(item.id)}
             >

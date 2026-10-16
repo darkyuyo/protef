@@ -12,7 +12,9 @@ export default function PlanesPage() {
     <>
       <PageIntro
         eyebrow="Valores en UF"
-        image={pagePhotos.mantencion}
+        image={pagePhotos.planes}
+        imagePosition="object-[22%_center]"
+        titleClassName="max-w-xl"
         crumbs={[
           { name: "Inicio", path: "/" },
           { name: "Planes", path: "/planes" },
@@ -51,7 +53,9 @@ export default function PlanesPage() {
                 </ul>
                 <Link
                   href={`/contacto?plan=${plan.id}`}
-                  className="mt-5 inline-flex min-h-11 items-center justify-center rounded-full bg-nav px-4 text-sm font-extrabold text-white"
+                  className={`mt-5 inline-flex min-h-11 items-center justify-center rounded-full bg-nav px-4 text-sm font-extrabold text-white transition duration-200 hover:-translate-y-0.5 ${
+                    plan.featured ? "hover:bg-white hover:text-nav" : "hover:bg-gold hover:text-nav"
+                  }`}
                 >
                   Cotizar plan {plan.name}
                 </Link>
