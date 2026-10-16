@@ -18,7 +18,7 @@ Revisar en el HTML servido, no solo en el código.
 - [ ] Home y layout: Organization / LocalBusiness / WebSite. Sin `sameAs` propio. Sin `aggregateRating`.
 - [ ] Enlaces `tel:` y `wa.me` con texto o `aria-label`, y WhatsApp con `rel="noopener noreferrer"`.
 - [ ] El home y `/servicios` enlazan a las 6 landings con el anchor largo, no con “ver más”.
-- [ ] Search Console: meta `ffgH_MUb5fwuxGUBfuTXWVh-tNNIDS25RTGoMbjNw-g`.
+- [ ] Search Console: meta `l2Yf1SjOiGkan23vjMKoTMD06HhUy-O9-Z0_wx4NFDw`.
 
 ## Redirects 301
 

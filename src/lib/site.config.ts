@@ -25,7 +25,7 @@ export const site = {
     country: "CL",
   },
   communes: ["Concepción", "Talcahuano", "San Pedro de la Paz"] as const,
-  googleVerification: "ffgH_MUb5fwuxGUBfuTXWVh-tNNIDS25RTGoMbjNw-g",
+  googleVerification: "l2Yf1SjOiGkan23vjMKoTMD06HhUy-O9-Z0_wx4NFDw",
   businessId: "https://www.protef.cl/#business",
   websiteId: "https://www.protef.cl/#website",
   ogImage: "/og-image.png",
