@@ -7,6 +7,7 @@ import { YearCounter } from "@/components/YearCounter";
 import { buildMetadata } from "@/lib/seo";
 import {
   condominios,
+  coverageLine,
   edificios,
   pageMeta,
   sectors,
@@ -68,10 +69,6 @@ export default function NosotrosPage() {
             señales débiles. El trabajo se ha desarrollado de manera sostenida desde{" "}
             {site.foundingYear}, con ejecución, integración y mantención para constructoras,
             edificios, condominios y empresas. Hoy son {years} años de calendario desde ese inicio.
-          </p>
-          <p className="mx-auto mt-3 max-w-3xl text-muted">
-            El material corporativo también usa la línea “automatización y seguridad electrónica”
-            en los flyers. La razón social no cambia: Comunicaciones y Seguridad Electrónica Ltda.
           </p>
           <h3 className="mt-12 text-2xl font-extrabold text-nav">Dónde se usa el servicio</h3>
           <ul className="mt-6 flex flex-wrap justify-center gap-2">
@@ -143,8 +140,7 @@ export default function NosotrosPage() {
             <div>
               <p className="text-muted">
                 Además de los seis rubros de seguridad, PROTEF presta mantención preventiva y
-                correctiva de señales débiles para edificios, comunidades y condominios, e instala
-                redes de datos en proyectos habitacionales y comerciales.
+                correctiva de señales débiles para edificios, comunidades y condominios.
               </p>
               <p className="mt-3 text-muted">
                 El mismo material informa participación en más de 30 proyectos habitacionales y
@@ -184,7 +180,7 @@ export default function NosotrosPage() {
               </ul>
               <p className="mt-4 text-sm text-muted transition-colors group-hover:text-white/80">
                 Norte y Valle Oriente están en Los Ángeles. La cobertura de visitas de urgencia que
-                publica el sitio sigue siendo {site.communes.join(", ")}.
+                publica el sitio sigue siendo {coverageLine()}.
               </p>
             </article>
           </div>

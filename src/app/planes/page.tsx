@@ -20,7 +20,7 @@ export default function PlanesPage() {
           { name: "Planes", path: "/planes" },
         ]}
         title="Planes de mantención preventiva en Concepción"
-        lead="Valores referenciales según el tamaño de la infraestructura. Todos más IVA. La urgencia suelta no usa esta tabla: se cotiza aparte."
+        lead="Valores referenciales según el tamaño de la infraestructura."
       />
       <div className="container-protef mt-8 pb-10">
         <div className="grid gap-4 lg:grid-cols-4">

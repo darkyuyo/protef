@@ -25,6 +25,7 @@ export const site = {
     country: "CL",
   },
   communes: ["Concepción", "Talcahuano", "San Pedro de la Paz"] as const,
+  coverageSectors: ["Lonco", "Villuco"] as const,
   googleVerification: "l2Yf1SjOiGkan23vjMKoTMD06HhUy-O9-Z0_wx4NFDw",
   businessId: "https://www.protef.cl/#business",
   websiteId: "https://www.protef.cl/#website",
@@ -32,6 +33,10 @@ export const site = {
   ogImageAlt:
     "PROTEF Comunicaciones y Seguridad Electrónica, servicio técnico en Concepción",
 } as const;
+
+export function coverageLine(): string {
+  return `${site.communes.join(", ")}, sector ${site.coverageSectors.join(" y ")}`;
+}
 
 export function canonicalUrl(path: string): string {
   if (path === "/") return site.url;
@@ -69,9 +74,9 @@ export const services: Service[] = [
     id: "cctv",
     icon: "camera",
     title: "CCTV y videovigilancia",
-    cardLabel: "CCTV Hikvision",
+    cardLabel: "CCTV y cámaras",
     description:
-      "Instalación, reparación y mantención de circuitos cerrados IP, cámaras Hikvision, grabación en NVR, monitoreo remoto y lectoras de patentes.",
+      "Instalación, reparación y mantención de circuitos cerrados IP, cámaras, grabación en NVR, monitoreo remoto y lectoras de patentes.",
     benefits: [
       "Imagen y grabación de nuevo en servicio",
       "Revisión de DVR, NVR y discos",
@@ -87,7 +92,7 @@ export const services: Service[] = [
     title: "Cercos eléctricos SEC",
     cardLabel: "Cerco eléctrico SEC",
     description:
-      "Instalación, reparación, mantención y certificación de cercos perimetrales eléctricos conforme a normativa SEC en Concepción y Biobío.",
+      "Instalación, reparación, mantención y certificación de cercos perimetrales eléctricos conforme a normativa SEC en Concepción.",
     benefits: [
       "Perímetro energizado de nuevo",
       "Energizador, batería y sirena",
@@ -117,12 +122,12 @@ export const services: Service[] = [
     id: "citofonos",
     icon: "intercom",
     title: "Citófonos y videoporteros",
-    cardLabel: "Citófonos Aiphone",
+    cardLabel: "Citófonos y videoporteros",
     description:
-      "Instalación, reparación y mantención de porteros eléctricos, videoporteros Aiphone y sistemas de comunicación con control de visitas.",
+      "Instalación, reparación y mantención de porteros eléctricos, videoporteros y sistemas de comunicación con control de visitas.",
     benefits: [
       "Audio, video y apertura remota",
-      "Porteros y videoporteros Aiphone",
+      "Porteros y videoporteros",
       "Comunicación con departamentos",
       "Ideal para edificios y condominios",
     ],
@@ -135,10 +140,10 @@ export const services: Service[] = [
     title: "Control de acceso biométrico",
     cardLabel: "Acceso biométrico facial",
     description:
-      "Instalación, reparación y mantención de biometría, tarjetas, torniquetes y reconocimiento facial Hikvision, con registro de ingresos y visitas.",
+      "Instalación, reparación y mantención de biometría, tarjetas y reconocimiento facial, con registro de ingresos y visitas.",
     benefits: [
       "Lectores faciales y de huella",
-      "Tarjetas, códigos y torniquetes",
+      "Tarjetas y códigos",
       "Respaldo de usuarios y permisos",
       "Registro de ingresos y visitas",
     ],

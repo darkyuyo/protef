@@ -10,7 +10,7 @@ import { WhatsAppIcon } from "@/components/icons";
 import { relatedServices, type Landing } from "@/content/landings";
 import { serviceGraph } from "@/lib/jsonld";
 import { servicePhoto } from "@/lib/photos";
-import { site, whatsappHref } from "@/lib/site.config";
+import { coverageLine, site, whatsappHref } from "@/lib/site.config";
 
 export function LandingRubro({ landing }: { landing: Landing }) {
   const crumbs = [
@@ -148,15 +148,15 @@ export function LandingRubro({ landing }: { landing: Landing }) {
               <div className="card p-6">
                 <h2 className="text-xl font-extrabold text-nav">Zona de atención</h2>
                 <p className="mt-2 text-muted">
-                  La visita cubre {site.communes.join(", ")}. No hay una página distinta por comuna.
+                  La visita cubre {coverageLine()}. No hay una página distinta por comuna.
                 </p>
                 <ul className="mt-4 flex flex-wrap gap-2">
-                  {site.communes.map((commune) => (
+                  {[...site.communes, ...site.coverageSectors.map((sector) => `Sector ${sector}`)].map((place) => (
                     <li
-                      key={commune}
+                      key={place}
                       className="rounded-full bg-[#eef4fb] px-3 py-2 text-sm font-bold text-nav"
                     >
-                      {commune}
+                      {place}
                     </li>
                   ))}
                 </ul>

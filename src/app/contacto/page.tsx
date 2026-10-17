@@ -4,7 +4,7 @@ import { PageIntro } from "@/components/PageIntro";
 import { WhatsAppIcon } from "@/components/icons";
 import { buildMetadata } from "@/lib/seo";
 import { pagePhotos } from "@/lib/photos";
-import { defaultWhatsappText, pageMeta, site, whatsappHref } from "@/lib/site.config";
+import { coverageLine, defaultWhatsappText, pageMeta, site, whatsappHref } from "@/lib/site.config";
 
 export const metadata = buildMetadata(pageMeta.contacto);
 
@@ -55,7 +55,7 @@ export default function ContactoPage() {
             </li>
           </ul>
           <p className="mt-4 text-sm text-muted">
-            Atención de terreno de lunes a viernes en {site.communes.join(", ")}. No hay horario de
+            Atención de terreno de lunes a viernes en {coverageLine()}. No hay horario de
             reloj publicado: se confirma al llamar.
           </p>
           <p className="mt-3 text-sm text-muted">

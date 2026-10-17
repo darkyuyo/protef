@@ -8,7 +8,7 @@ import { serviceIcons } from "@/components/icons";
 import { YearCounter } from "@/components/YearCounter";
 import { heroPhoto, homePhotos } from "@/lib/photos";
 import { buildMetadata } from "@/lib/seo";
-import { pageMeta, services, site, yearsOfExperience } from "@/lib/site.config";
+import { coverageLine, pageMeta, services, site, yearsOfExperience } from "@/lib/site.config";
 
 export const metadata = buildMetadata(pageMeta.home);
 
@@ -19,7 +19,7 @@ const homeLines: Record<string, string> = {
   cercos: "Perímetro eléctrico revisado y conforme a normativa SEC.",
   portones: "Motor, fotoceldas y portón que vuelve a abrir.",
   citofonos: "Audio, video y apertura en edificios y condominios.",
-  biometrico: "Huella, rostro, tarjetas y torniquetes en servicio.",
+  biometrico: "Huella, rostro y tarjetas en servicio.",
   alarmas: "Detectores, sirenas y centrales listos para una prueba.",
 };
 
@@ -36,7 +36,7 @@ const defines = [
   },
   {
     title: "Dedicación",
-    text: "La visita deja el acceso probado: cableado ordenado, configuración completa y un técnico que conoce ese equipo.",
+    text: "La visita deja el acceso probado: cableado ordenado, configuración completa y personal técnico calificado.",
     icon: Award,
   },
   {
@@ -87,8 +87,8 @@ export default function HomePage() {
 
       <section className="container-protef pt-8">
         <p className="max-w-xl text-lg">
-          Si el portón no abre, la cámara no graba o el cerco se apagó, llame. Un técnico sale a
-          terreno en {site.communes.join(", ")}.
+          Si el portón no abre, la cámara no graba o el cerco se apagó, llame. El personal técnico
+          calificado evalúa en terreno el incidente en {coverageLine()}.
         </p>
         <Link
           href="/servicios"
@@ -110,7 +110,9 @@ export default function HomePage() {
           </div>
           <div className="card p-5">
             <dt className="text-xs font-bold tracking-wide text-muted uppercase">Cobertura</dt>
-            <dd className="mt-1 font-extrabold text-nav">{site.communes.join(" · ")}</dd>
+            <dd className="mt-1 font-extrabold text-nav">
+              {site.communes.join(" · ")} · sector {site.coverageSectors.join(" · ")}
+            </dd>
           </div>
           <div className="card p-5">
             <dt className="text-xs font-bold tracking-wide text-muted uppercase">Urgencias</dt>
@@ -231,7 +233,8 @@ export default function HomePage() {
           <a className="font-bold text-nav underline" href={`mailto:${site.email}`}>
             {site.email}
           </a>{" "}
-          o pida la cotización.
+          o pida la cotización. La cotización en línea no tiene costo. La visita técnica cuesta
+          entre $18.000 y $25.000 más IVA, según la distancia del desplazamiento.
         </p>
       </section>
 

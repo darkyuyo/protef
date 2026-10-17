@@ -1,4 +1,4 @@
-import { services, site } from "@/lib/site.config";
+import { coverageLine, services } from "@/lib/site.config";
 
 export type Faq = { question: string; answer: string };
 
@@ -23,7 +23,7 @@ export type Landing = {
   faqs: Faq[];
 };
 
-const zones = site.communes.join(", ");
+const zones = coverageLine();
 
 export const landings: Landing[] = [
   {
@@ -53,7 +53,7 @@ export const landings: Landing[] = [
         heading: "Qué revisamos en la visita",
         paragraphs: [
           `La falla rara vez es “la cámara” a simple vista. En ${zones} vemos equipos que perdieron la grabación por un disco agotado, una fuente que calienta de más o un enlace de red que se cae por tramos. El técnico parte por el síntoma que reporta conserjería: sin imagen, sin historial o sin acceso remoto.`,
-          "En terreno se comprueba alimentación, conectores, switch, grabador y el estado del disco. Si el equipo aún sirve, se recupera la configuración y se prueba una grabación real. Si hay que cambiar una cámara o un grabador, se cotiza el repuesto antes de instalarlo. Trabajamos con Hikvision y con circuitos mixtos, incluidas las lectoras de patentes cuando el recinto las tiene.",
+          "En terreno se comprueba alimentación, conectores, switch, grabador y el estado del disco. Si el equipo aún sirve, se recupera la configuración y se prueba una grabación real. Si hay que cambiar una cámara o un grabador, se cotiza el repuesto antes de instalarlo. Se trabaja el equipo que el recinto ya tiene, incluidas las lectoras de patentes cuando existen.",
         ],
       },
       {
@@ -72,7 +72,7 @@ export const landings: Landing[] = [
     ],
     brandsTitle: "Equipos con los que trabajamos",
     brands: [
-      "Cámaras y grabadores Hikvision",
+      "Cámaras y grabadores ya instalados",
       "DVR y NVR de circuitos ya instalados",
       "Cámaras lectoras de patentes",
       "Enlaces de red, switches y fuentes del rack de seguridad",
@@ -94,9 +94,9 @@ export const landings: Landing[] = [
           "Si el sistema ya tenía acceso remoto, se restablece la conexión y se prueba con la cuenta de la administración. Si nunca estuvo configurado, se cotiza aparte para no mezclarlo con la urgencia de la imagen local.",
       },
       {
-        question: "¿Trabajan solo con Hikvision?",
+        question: "¿Trabajan una sola marca de cámaras?",
         answer:
-          "Hikvision es la marca que PROTEF instala y mantiene de forma habitual. También diagnosticamos circuitos de otras marcas que ya están en el edificio, siempre que el equipo permita servicio técnico.",
+          "No. Se diagnostica el circuito que ya está en el edificio, sea de la marca que sea, siempre que el equipo permita servicio técnico. El repuesto, si hace falta, se cotiza sin amarrar el recinto a un fabricante.",
       },
       {
         question: "¿El servicio es 24 horas?",
@@ -225,7 +225,7 @@ export const landings: Landing[] = [
         ],
       },
       {
-        heading: "Mantención para que no se trabe el viernes",
+        heading: "Mantención para que el portón no se detenga",
         paragraphs: [
           "Si hoy el acceso está bloqueado, la prioridad es la reparación. La mantención —calibración, fotoceldas y, si el equipo es hidráulico, el nivel de líquido— evita la repetición. Los valores en UF son referenciales y no son la tarifa de la urgencia.",
         ],
@@ -282,10 +282,10 @@ export const landings: Landing[] = [
     path: "/reparacion-citofonos-concepcion",
     title: "Reparación de citófonos en Concepción | PROTEF",
     description:
-      "¿Citófono o videoportero sin audio en su edificio de Concepción? PROTEF repara Aiphone y porteros. Llame al +56 9 8210 9253. este día hábil.",
+      "¿Citófono o videoportero sin audio en su edificio de Concepción? PROTEF repara porteros y videoporteros. Llame al +56 9 8210 9253. Este día hábil.",
     h1: "Reparación de citófonos y videoporteros en Concepción",
     eyebrow: "Citofonía para edificios y condominios",
-    lead: "Si el departamento no escucha la calle, la pantalla del acceso no muestra a la visita o la chapa no abre, el edificio pierde el control de quién entra. Reparamos porteros eléctricos, videoporteros Aiphone y la comunicación con las unidades.",
+    lead: "Si el departamento no escucha la calle, la pantalla del acceso no muestra a la visita o la chapa no abre, el edificio pierde el control de quién entra. Reparamos porteros eléctricos, videoporteros y la comunicación con las unidades.",
     strip: "¿El citófono no llama al departamento? Escríbanos o llame en día hábil.",
     waText: "Hola, necesito reparación de citófonos o videoportero en Concepción.",
     serviceName: "Reparación de citófonos y videoporteros en Concepción",
@@ -297,13 +297,13 @@ export const landings: Landing[] = [
       "Videoportero sin imagen o con pantalla apagada",
       "La visita no puede abrir la puerta desde el departamento",
       "Placa de calle dañada, teclado o botonera en mal estado",
-      "Fuentes, cableado y equipos Aiphone que dejan de comunicar",
+      "Fuentes, cableado y equipos que dejan de comunicar",
     ],
     sections: [
       {
         heading: "Citofonía digital para el edificio, no solo para un departamento",
         paragraphs: [
-          "Un sistema moderno entrega audio claro, video de la visita, apertura remota y un registro simple de quién llamó. En la práctica, muchos condominios siguen con un equipo que fue bueno y hoy tiene fuentes cansadas, un par de monitores mudos y una placa de calle al sol. PROTEF repara ese parque, con experiencia en videoporteros Aiphone.",
+          "Un sistema moderno entrega audio claro, video de la visita, apertura remota y un registro simple de quién llamó. En la práctica, muchos condominios siguen con un equipo que fue bueno y hoy tiene fuentes cansadas, un par de monitores mudos y una placa de calle al sol. PROTEF repara ese parque, sin depender de una marca.",
           `La visita en ${zones} distingue si el problema es de un solo departamento o de todo el acceso. No se cambia el edificio completo por un monitor. Se prueba llamada, imagen y chapa, y se deja a conserjería una explicación corta de cómo abrir.`,
         ],
       },
@@ -319,12 +319,12 @@ export const landings: Landing[] = [
       { title: "Dónde falla", text: "Placa de calle, un departamento, la chapa o todos los monitores." },
       { title: "Visita al acceso", text: "Se llama a una unidad de prueba y se observa audio, video y apertura." },
       { title: "Fuente y cable", text: "Se mide alimentación y se revisan empalmes antes de condenar el monitor." },
-      { title: "Reparación Aiphone u otro portero", text: "Se interviene el equipo instalado. Aiphone es la marca habitual de estos trabajos." },
+      { title: "Reparación del equipo instalado", text: "Se interviene el portero o videoportero que ya está, sin cambiar el sistema completo por la marca." },
       { title: "Prueba con conserjería", text: "Queda demostrado cómo recibir una visita y cómo abrir." },
     ],
     brandsTitle: "Equipos de comunicación",
     brands: [
-      "Videoporteros y porteros Aiphone",
+      "Videoporteros y porteros ya instalados",
       "Placas de calle y monitores de departamento",
       "Chapas y aperturas asociadas al llamado",
       "Sistemas digitales y análogos ya instalados en el edificio",
@@ -336,9 +336,9 @@ export const landings: Landing[] = [
           "Se parte por el síntoma. Si un monitor no timbra y el resto sí, se revisa esa unidad y su línea. El cambio completo se propone solo cuando la placa o la fuente ya no dan para el edificio.",
       },
       {
-        question: "¿Trabajan videoporteros Aiphone antiguos?",
+        question: "¿Trabajan videoporteros antiguos?",
         answer:
-          "Sí, es parte del servicio habitual. Si el repuesto de ese modelo ya no existe, se informa con claridad y se cotiza una alternativa compatible, sin dar por hecho un recambio total.",
+          "Sí, es parte del servicio habitual, sea cual sea la marca instalada. Si el repuesto de ese modelo ya no existe, se informa con claridad y se cotiza una alternativa compatible, sin dar por hecho un recambio total.",
       },
       {
         question: "¿La imagen del videoportero es lo mismo que el CCTV?",
@@ -366,10 +366,10 @@ export const landings: Landing[] = [
     path: "/control-acceso-biometrico-concepcion",
     title: "Acceso biométrico en Concepción | PROTEF",
     description:
-      "¿Lector facial o de huella fuera de servicio en Concepción? PROTEF repara acceso Hikvision en edificios y empresas. Llame al +56 9 8210 9253.",
+      "¿Lector facial o de huella fuera de servicio en Concepción? PROTEF repara control de acceso en edificios y empresas. Llame al +56 9 8210 9253.",
     h1: "Control de acceso biométrico y facial en Concepción",
     eyebrow: "Ingresos ordenados para edificios y empresas",
-    lead: "Si el lector facial no reconoce, la huella no abre o nadie puede entrar sin la tarjeta del conserje, el control de acceso dejó de ser control. Instalamos y reparamos biometría, tarjetas y torniquetes, con equipos de reconocimiento facial Hikvision.",
+    lead: "Si el lector facial no reconoce, la huella no abre o nadie puede entrar sin la tarjeta del conserje, el control de acceso dejó de ser control. Instalamos y reparamos biometría, tarjetas y reconocimiento facial.",
     strip: "¿El lector del hall no abre? Llame de lunes a viernes.",
     waText: "Hola, necesito reparación de control de acceso biométrico en Concepción.",
     serviceName: "Control de acceso biométrico y facial en Concepción",
@@ -378,7 +378,7 @@ export const landings: Landing[] = [
       "El lector, la cerradura y la lista de personas autorizadas tienen que coincidir. Cuando uno de los tres falla, el hall se abre a cualquiera o no se abre para nadie.",
     failures: [
       "Lector facial o de huella que rechaza a residentes habituales",
-      "Tarjetas que dejaron de abrir o torniquete detenido",
+      "Tarjetas que dejaron de abrir",
       "Puerta que queda tomada o, al revés, sin chapa",
       "Usuarios y permisos que nadie sabe respaldar",
       "Equipo sin comunicación con el resto del acceso",
@@ -387,31 +387,31 @@ export const landings: Landing[] = [
       {
         heading: "Biometría útil para la administración, no solo para la foto del catálogo",
         paragraphs: [
-          "Un acceso bien resuelto identifica a la persona, abre la puerta que corresponde y deja registro. PROTEF instala y mantiene lectores faciales Hikvision, huella, tarjetas y torniquetes en edificios, condominios, oficinas e industria. El flyer corporativo lo resume así: identificación precisa, control de ingresos y reportes.",
+          "Un acceso bien resuelto identifica a la persona, abre la puerta que corresponde y deja registro. PROTEF instala y mantiene lectores faciales, de huella y de tarjetas en edificios, condominios, oficinas e industria. El criterio es el mismo en cualquier marca: identificación precisa, control de ingresos y reportes.",
           `En la reparación, en ${zones}, no partimos por vender otro lector. Se prueba el que está en el muro: lente, red, alimentación y la base de usuarios. Si no hay respaldo de la nómina, se dice antes de prometer que están todos cargados.`,
         ],
       },
       {
         heading: "Mantener usuarios y permisos es parte del sistema",
         paragraphs: [
-          "Un lector calibrado con una nómina vieja abre de más o de menos. La mantención de accesos incluye prueba de tarjetas y torniquetes, respaldo de permisos y actualización de firmware cuando el fabricante aún la publica para ese modelo. Esos ítems están en la página de mantención.",
+          "Un lector calibrado con una nómina vieja abre de más o de menos. La mantención de accesos incluye prueba de tarjetas, respaldo de permisos y actualización de firmware cuando el fabricante aún la publica para ese modelo. Esos ítems están en la página de mantención.",
           "Si la urgencia es que nadie entra a la oficina un lunes, se agenda la visita de día hábil y se deja una forma de acceso provisoria solo si el herraje lo permite con seguridad. No se anula la chapa “para salir del paso” sin que la administración lo asuma.",
         ],
       },
     ],
     process: [
-      { title: "Qué puerta y qué lector", text: "Facial, huella, tarjeta o torniquete, y si la falla es de todos o de algunas personas." },
-      { title: "Prueba en el acceso", text: "Se lee un usuario conocido y se observa la chapa o el torniquete." },
+      { title: "Qué puerta y qué lector", text: "Facial, huella o tarjeta, y si la falla es de todos o de algunas personas." },
+      { title: "Prueba en el acceso", text: "Se lee un usuario conocido y se observa la chapa." },
       { title: "Red y respaldo", text: "Se revisa comunicación del equipo y si existe copia de la nómina." },
       { title: "Ajuste o repuesto", text: "Limpieza, calibración o cotización del módulo que no responde." },
       { title: "Entrega a quien administra", text: "Queda claro cómo dar de alta y de baja, sin depender de una sola persona." },
     ],
     brandsTitle: "Tecnología de acceso",
     brands: [
-      "Lectores faciales Hikvision",
+      "Lectores faciales ya instalados",
       "Lectores de huella y teclados ya instalados",
       "Tarjetas de proximidad y códigos",
-      "Torniquetes y chapas asociadas al lector",
+      "Chapas asociadas al lector",
     ],
     faqs: [
       {
@@ -420,14 +420,14 @@ export const landings: Landing[] = [
           "Sí, si existe un respaldo exportable o un listado confiable de la administración. Sin esa base no se reconstruye la nómina de memoria. La visita deja el equipo listo para cargar y explica el procedimiento.",
       },
       {
-        question: "¿El reconocimiento facial es solo Hikvision?",
+        question: "¿El reconocimiento facial queda amarrado a una marca?",
         answer:
-          "El equipo facial que PROTEF muestra y mantiene es Hikvision. Otros lectores que ya estén en la puerta se diagnostican; el reemplazo, si hace falta, se cotiza sobre esa condición.",
+          "No. Se diagnostica el lector que ya está en la puerta. El reemplazo, si hace falta, se cotiza sin obligar al edificio a un fabricante.",
       },
       {
         question: "¿Sirve para una empresa y también para un condominio?",
         answer:
-          "Sí. Cambia el flujo: en la empresa importa la jornada y el torniquete; en el condominio, residentes y visitas. El servicio técnico es el mismo oficio.",
+          "Sí. Cambia el flujo: en la empresa importa la jornada y el control de ingreso; en el condominio, residentes y visitas. El servicio técnico es el mismo oficio.",
       },
       {
         question: "¿Actualizan el firmware siempre?",
@@ -441,7 +441,7 @@ export const landings: Landing[] = [
       },
       {
         question: "¿Qué comunas cubre el acceso biométrico?",
-        answer: `Concepción, Talcahuano y San Pedro de la Paz. El texto de esta página vale para las tres; no hay fichas duplicadas por comuna.`,
+        answer: `${coverageLine()}. El texto de esta página vale para toda esa zona; no hay fichas duplicadas por comuna.`,
       },
     ],
   },

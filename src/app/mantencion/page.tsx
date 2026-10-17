@@ -5,7 +5,7 @@ import { PageIntro } from "@/components/PageIntro";
 import { maintenanceRubros } from "@/content/maintenance";
 import { buildMetadata } from "@/lib/seo";
 import { pagePhotos } from "@/lib/photos";
-import { pageMeta, site } from "@/lib/site.config";
+import { coverageLine, pageMeta, site } from "@/lib/site.config";
 
 export const metadata = buildMetadata(pageMeta.mantencion);
 
@@ -48,7 +48,7 @@ export default function MantencionPage() {
               ajustar, limpiar o cambiar.
             </p>
             <p className="mt-3 text-muted">
-              En {site.communes.join(", ")} la misma visita puede cubrir cámaras, cerco, portón,
+              En {coverageLine()} la misma visita puede cubrir cámaras, cerco, portón,
               citófono, acceso y alarma de incendio, si el recinto los tiene. El cerco se revisa
               con el criterio de la normativa SEC. Lo que no alcanza a repararse en el momento queda
               cotizado, sin mezclarlo con la revisión preventiva.

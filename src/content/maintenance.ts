@@ -44,11 +44,11 @@ export const maintenanceRubros: MaintenanceRubro[] = [
     label: "Accesos",
     title: "Control de accesos",
     intro:
-      "Revisión de lectores biométricos, tarjetas, torniquetes y del registro de usuarios y permisos.",
+      "Revisión de lectores biométricos, tarjetas y del registro de usuarios y permisos.",
     items: [
       "Calibración de lectores biométricos",
       "Respaldo de usuarios y permisos",
-      "Prueba de tarjetas y torniquetes",
+      "Prueba de tarjetas",
       "Actualización de firmware cuando el equipo lo permite",
     ],
   },
