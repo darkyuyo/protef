@@ -6,7 +6,7 @@ import { Reveal } from "@/components/Reveal";
 import { ServiceCard } from "@/components/ServiceCard";
 import { buildMetadata } from "@/lib/seo";
 import { pagePhotos } from "@/lib/photos";
-import { coverageLine, defaultWhatsappText, pageMeta, services, site } from "@/lib/site.config";
+import { defaultWhatsappText, pageMeta, services, site } from "@/lib/site.config";
 
 export const metadata = buildMetadata(pageMeta.servicios);
 
@@ -25,7 +25,6 @@ export default function ServiciosPage() {
         eyebrow="Seis sistemas"
         image={pagePhotos.servicios}
         title="Sistemas en los que trabajamos"
-        lead={`Reparación y mantención en terreno para edificios, condominios y empresas en ${coverageLine()}.`}
         crumbs={[
           { name: "Inicio", path: "/" },
           { name: "Servicios", path: "/servicios" },

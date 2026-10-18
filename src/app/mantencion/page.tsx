@@ -5,7 +5,7 @@ import { PageIntro } from "@/components/PageIntro";
 import { maintenanceRubros } from "@/content/maintenance";
 import { buildMetadata } from "@/lib/seo";
 import { pagePhotos } from "@/lib/photos";
-import { coverageLine, pageMeta, site } from "@/lib/site.config";
+import { pageMeta } from "@/lib/site.config";
 
 export const metadata = buildMetadata(pageMeta.mantencion);
 
@@ -46,12 +46,6 @@ export default function MantencionPage() {
               La mantención no espera a que el portón se trabe o la cámara deje de grabar. Se agenda
               un día hábil, se recorre el equipo que el edificio ya tiene y se anota lo que hay que
               ajustar, limpiar o cambiar.
-            </p>
-            <p className="mt-3 text-muted">
-              En {coverageLine()} la misma visita puede cubrir cámaras, cerco, portón,
-              citófono, acceso y alarma de incendio, si el recinto los tiene. El cerco se revisa
-              con el criterio de la normativa SEC. Lo que no alcanza a repararse en el momento queda
-              cotizado, sin mezclarlo con la revisión preventiva.
             </p>
           </div>
         </section>

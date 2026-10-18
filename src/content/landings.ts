@@ -402,14 +402,6 @@ export const landings: Landing[] = [
         heading: "Biometría útil para la administración, no solo para la foto del catálogo",
         paragraphs: [
           "Un acceso bien resuelto identifica a la persona, abre la puerta que corresponde y deja registro. PROTEF instala y mantiene lectores faciales, de huella y de tarjetas en edificios, condominios, oficinas e industria. El criterio es el mismo en cualquier marca: identificación precisa, control de ingresos y reportes.",
-          `En la reparación, en ${zones}, no partimos por vender otro lector. Se prueba el que está en el muro: lente, red, alimentación y la base de usuarios. Si no hay respaldo de la nómina, se dice antes de prometer que están todos cargados.`,
-        ],
-      },
-      {
-        heading: "Mantener usuarios y permisos es parte del sistema",
-        paragraphs: [
-          "Un lector calibrado con una nómina vieja abre de más o de menos. La mantención de accesos incluye prueba de tarjetas, respaldo de permisos y actualización de firmware cuando el fabricante aún la publica para ese modelo. Esos ítems están en la página de mantención.",
-          "Si la urgencia es que nadie entra a la oficina un lunes, se agenda la visita de día hábil y se deja una forma de acceso provisoria solo si el herraje lo permite con seguridad. No se anula la chapa “para salir del paso” sin que la administración lo asuma.",
         ],
       },
     ],

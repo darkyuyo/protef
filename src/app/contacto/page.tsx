@@ -4,7 +4,7 @@ import { PageIntro } from "@/components/PageIntro";
 import { WhatsAppIcon } from "@/components/icons";
 import { buildMetadata } from "@/lib/seo";
 import { pagePhotos } from "@/lib/photos";
-import { coverageLine, defaultWhatsappText, pageMeta, site, whatsappHref } from "@/lib/site.config";
+import { defaultWhatsappText, pageMeta, site, whatsappHref } from "@/lib/site.config";
 
 export const metadata = buildMetadata(pageMeta.contacto);
 
@@ -54,15 +54,6 @@ export default function ContactoPage() {
               Concepción, Biobío, Chile
             </li>
           </ul>
-          <p className="mt-4 text-sm text-muted">
-            Atención de terreno de lunes a viernes en {coverageLine()}. No hay horario de
-            reloj publicado: se confirma al llamar.
-          </p>
-          <p className="mt-3 text-sm text-muted">
-            En el mensaje conviene el nombre del edificio, la comuna y qué dejó de funcionar: sin
-            imagen, portón trabado, cerco en sirena, citófono mudo o lector que no abre. Con eso la
-            visita sale con la herramienta del rubro, no a mirar el sistema por primera vez.
-          </p>
         </aside>
         <section className="card relative p-6">
           <h2 className="mb-4 text-xl font-extrabold text-nav">Enviar un mensaje</h2>
