@@ -21,6 +21,11 @@ export type Landing = {
   brandsTitle: string;
   brands: string[];
   faqs: Faq[];
+  offer?: {
+    title: string;
+    points: string[];
+    note: string;
+  };
 };
 
 const zones = coverageLine();
@@ -201,7 +206,7 @@ export const landings: Landing[] = [
       "¿Portón trabado o motor que no responde en Concepción? PROTEF repara correderas, batientes y fotoceldas. Llame al +56 9 8210 9253. Hoy mismo.",
     h1: "Reparación de portón automático en Concepción",
     eyebrow: "Acceso vehicular en días hábiles",
-    lead: "Si el portón no abre, quedó a medias o el motor dejó de responder, el condominio se queda sin entrada o sin cierre. Reparamos portones correderos, batientes y barreras: motor, cremallera, fotoceldas, control remoto y central.",
+    lead: "Si el portón no abre, quedó a medias o el motor dejó de responder, el condominio se queda sin entrada o sin cierre. Reparamos portones correderos, batientes y barreras: motor, cremallera, fotoceldas y central. Los controles remotos se venden nuevos y se programan en terreno.",
     strip: "¿Portón trabado? Llame y coordinamos la visita de lunes a viernes.",
     waText: "Hola, necesito reparación urgente de portón automático en Concepción.",
     serviceName: "Reparación urgente de portones automáticos en Concepción",
@@ -245,6 +250,14 @@ export const landings: Landing[] = [
       "Fotoceldas y sensores de seguridad",
       "Controles remotos y enlace con citofonía",
     ],
+    offer: {
+      title: "Un control nuevo, pareado en la visita",
+      points: [
+        "Si se perdió el control o hay que sumar uno más, se lleva un equipo nuevo a la casa, el condominio o la comunidad.",
+        "En terreno se deja programado en la central o el motor del portón que ya está instalado, sea corredera, batiente o barrera.",
+      ],
+      note: "Solo se venden controles nuevos. El control usado no se repara.",
+    },
     faqs: [
       {
         question: "¿Pueden abrir un portón que quedó cerrado con gente afuera?",
@@ -254,7 +267,7 @@ export const landings: Landing[] = [
       {
         question: "¿Reparan el control remoto suelto?",
         answer:
-          "Sí, cuando la central está sana y solo hay que parear o reemplazar el control. Si ningún control responde, se revisa primero el receptor y la alimentación.",
+          "No. La venta es solo de controles nuevos, con entrega y programación en terreno en la central o el motor. No reparamos controles usados. Si ningún control responde, se revisa primero el receptor y la alimentación del portón.",
       },
       {
         question: "¿El portón se abre desde el citófono y eso también lo ven?",

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Phone } from "lucide-react";
+import { Phone, TriangleAlert } from "lucide-react";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { HeroTitle } from "@/components/HeroTitle";
 import { CTA } from "@/components/CTA";
@@ -80,6 +80,30 @@ export function LandingRubro({ landing }: { landing: Landing }) {
             </a>
           </div>
         </div>
+
+        {landing.offer ? (
+          <section className="container-protef mt-8" aria-labelledby="controles-titulo">
+            <div className="card border-l-8 border-gold p-6 md:p-8">
+              <h2 id="controles-titulo" className="text-[clamp(1.5rem,2.4vw,2rem)] leading-tight font-extrabold text-nav">
+                {landing.offer.title}
+              </h2>
+              <ul className="mt-5 grid gap-3">
+                {landing.offer.points.map((point) => (
+                  <li key={point} className="flex gap-2 text-muted">
+                    <span aria-hidden="true" className="font-bold text-brand-dark">
+                      •
+                    </span>
+                    {point}
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-6 flex gap-3 rounded-[12px] bg-gold/25 px-4 py-3 text-sm font-bold text-nav">
+                <TriangleAlert className="mt-0.5 h-5 w-5 shrink-0" aria-hidden="true" />
+                {landing.offer.note}
+              </p>
+            </div>
+          </section>
+        ) : null}
 
         <div className="container-protef mt-8 grid gap-8 pb-10">
           <Reveal>

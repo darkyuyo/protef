@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Award, CalendarCheck, Headphones, Handshake, Lightbulb } from "lucide-react";
+import { ArrowRight, CalendarCheck, TriangleAlert } from "lucide-react";
 import { HeroTitle } from "@/components/HeroTitle";
 import { JsonLd } from "@/components/JsonLd";
 import { Reveal } from "@/components/Reveal";
@@ -17,34 +17,11 @@ const years = yearsOfExperience();
 const homeLines: Record<string, string> = {
   cctv: "Cámaras, NVR y grabación que vuelven a mostrar imagen.",
   cercos: "Perímetro eléctrico revisado y conforme a normativa SEC.",
-  portones: "Motor, fotoceldas y portón que vuelve a abrir.",
+  portones: "Motor y fotoceldas. Controles remotos nuevos, con programación en terreno.",
   citofonos: "Audio, video y apertura en edificios y condominios.",
   biometrico: "Huella, rostro y tarjetas en servicio.",
   alarmas: "Detectores, sirenas y centrales listos para una prueba.",
 };
-
-const defines = [
-  {
-    title: "Innovación",
-    text: "Cámaras, acceso facial, lectura de patentes y centrales que se revisan en el equipo que el edificio ya tiene.",
-    icon: Lightbulb,
-  },
-  {
-    title: "Compromiso",
-    text: "Primero vemos qué falló. La cotización sale de ese diagnóstico, no de cambiar el sistema completo.",
-    icon: Handshake,
-  },
-  {
-    title: "Dedicación",
-    text: "La visita deja el acceso probado: cableado ordenado, configuración completa y personal técnico calificado.",
-    icon: Award,
-  },
-  {
-    title: "Postventa",
-    text: "Después de reparar seguimos. Ajustes, mantención y un teléfono de lunes a viernes.",
-    icon: Headphones,
-  },
-];
 
 export default function HomePage() {
   return (
@@ -170,28 +147,54 @@ export default function HomePage() {
         />
       </figure>
 
-      <section className="bg-white/75 py-16" aria-labelledby="define-titulo">
+      <section className="bg-white/75 py-16" aria-labelledby="controles-inicio">
         <div className="container-protef">
-          <h2
-            id="define-titulo"
-            className="text-center text-[clamp(1.8rem,3vw,2.6rem)] font-extrabold text-nav"
+          <Link
+            href="/reparacion-portones-automaticos-concepcion"
+            className="card block overflow-hidden transition duration-200 hover:-translate-y-1 hover:shadow-[0_16px_36px_rgba(5,28,56,.12)] lg:grid lg:grid-cols-[1.15fr_.85fr] lg:items-center"
           >
-            Lo que nos define
-          </h2>
-          <div className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
-            {defines.map((item) => {
-              const Icon = item.icon;
-              return (
-                <article key={item.title} className="text-center">
-                  <span className="mx-auto grid h-12 w-12 place-items-center text-brand-dark">
-                    <Icon className="h-8 w-8" strokeWidth={1.75} aria-hidden="true" />
+            <figure className="bg-[#eef4fa] p-4 md:p-6">
+              <Image
+                src="/fotos/4928e508-6989-49e3-bd61-16de956b4ebc.jpg"
+                alt="Catálogo de controles remotos nuevos para portones, de 2, 3 y 4 canales"
+                width={1400}
+                height={900}
+                sizes="(min-width: 1024px) 55vw, 94vw"
+                className="h-auto w-full rounded-[12px]"
+              />
+            </figure>
+            <div className="border-t-8 border-gold p-6 md:p-8 lg:border-t-0 lg:border-l-8">
+              <h2
+                id="controles-inicio"
+                className="text-[clamp(1.5rem,2.4vw,2rem)] leading-tight font-extrabold text-nav"
+              >
+                Venta y programación de controles remotos nuevos
+              </h2>
+              <ul className="mt-5 grid gap-3">
+                <li className="flex gap-2 text-muted">
+                  <span aria-hidden="true" className="font-bold text-brand-dark">
+                    •
                   </span>
-                  <h3 className="mt-3 text-lg font-extrabold text-nav">{item.title}</h3>
-                  <p className="mt-2 text-sm text-muted">{item.text}</p>
-                </article>
-              );
-            })}
-          </div>
+                  Para todo tipo de portones: casas particulares, condominios y comunidades.
+                </li>
+                <li className="flex gap-2 text-muted">
+                  <span aria-hidden="true" className="font-bold text-brand-dark">
+                    •
+                  </span>
+                  Servicio completo: entrega a domicilio y programación en terreno, directamente en
+                  la central o el motor.
+                </li>
+              </ul>
+              <p className="mt-6 flex gap-3 rounded-[12px] bg-gold/25 px-4 py-3 text-sm font-bold text-nav">
+                <TriangleAlert className="mt-0.5 h-5 w-5 shrink-0" aria-hidden="true" />
+                Venta exclusiva de equipos nuevos. No realizamos reparación de controles.
+              </p>
+              <span className="mt-5 inline-flex items-center gap-1 text-sm font-extrabold text-brand-dark">
+                Ver portones y controles
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </span>
+            </div>
+          </Link>
         </div>
       </section>
 
