@@ -131,20 +131,20 @@ export function Footer() {
         backgroundSize: "140px 140px",
       }}
     >
-      <div className="container-protef grid gap-10 py-14 md:grid-cols-3 md:items-start">
+      <div className="container-protef grid gap-6 py-8 md:grid-cols-2 md:items-start">
         <div>
-          <BrandMark className="h-14 w-14" />
-          <p className="mt-4 max-w-xs text-sm text-white/80">
+          <BrandMark className="h-11 w-11" />
+          <p className="mt-3 max-w-xs text-sm text-white/80">
             Servicio técnico de seguridad electrónica en Concepción desde {site.foundingYear}.
             Urgencias de lunes a viernes.
           </p>
-          <Link className="mt-4 inline-flex text-sm font-bold text-brand hover:text-gold" href="/privacidad">
+          <Link className="mt-3 inline-flex text-sm font-bold text-brand hover:text-gold" href="/privacidad">
             Privacidad y datos personales
           </Link>
         </div>
         <div>
           <p className="text-lg font-extrabold">Contacto</p>
-          <ul className="mt-4 grid gap-3 text-sm text-white/85">
+          <ul className="mt-3 grid gap-2 text-sm text-white/85">
             <li className="flex items-start gap-2">
               <MapPin className="mt-0.5 h-4 w-4 shrink-0" aria-hidden="true" />
               <span>Concepción, Región del Biobío, Chile</span>
@@ -163,20 +163,8 @@ export function Footer() {
             </li>
           </ul>
         </div>
-        <div>
-          <p className="text-lg font-extrabold">Escríbanos</p>
-          <a
-            href={whatsappHref(defaultWhatsappText)}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Escribir por WhatsApp a PROTEF"
-            className="mt-4 inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/30 hover:border-gold hover:text-gold"
-          >
-            <WhatsAppIcon className="h-5 w-5" />
-          </a>
-        </div>
       </div>
-      <div className="border-t border-white/10 py-4 text-center text-xs text-white/60">
+      <div className="border-t border-white/10 py-3 text-center text-xs text-white/60">
         <p>
           © {year} {site.legalName}
         </p>

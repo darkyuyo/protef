@@ -25,14 +25,12 @@ export default function NosotrosPage() {
   return (
     <>
       <PageIntro
-        eyebrow={`Desde ${site.foundingYear}`}
         image={aboutPhoto}
         crumbs={[
           { name: "Inicio", path: "/" },
           { name: "Quiénes somos", path: "/nosotros" },
         ]}
         title="Integradores de seguridad electrónica en Concepción"
-        lead={`Desde ${site.foundingYear} proyectamos, instalamos y damos soporte a videovigilancia, accesos controlados, facial, huella y con tarjetas de proximidad, citofonía, protección perimetral y señales débiles para el sector inmobiliario e industrial del Biobío.`}
       />
       <div className="container-protef mt-8">
         <section className="grid gap-4 md:grid-cols-3">
@@ -55,24 +53,7 @@ export default function NosotrosPage() {
         </section>
       </div>
 
-      <section className="mt-10 bg-white/75 py-16">
-        <div className="container-protef text-center">
-          <p className="text-sm font-extrabold tracking-wide text-brand-dark uppercase">
-            Nuestra empresa
-          </p>
-          <h2 className="mt-3 text-[clamp(1.8rem,3vw,2.6rem)] font-extrabold text-nav">
-            {site.legalName}
-          </h2>
-          <p className="mx-auto mt-4 max-w-3xl text-muted">
-            Somos una empresa de Concepción dedicada a la seguridad electrónica y a los sistemas de
-            señales débiles. El trabajo se ha desarrollado de manera sostenida desde{" "}
-            {site.foundingYear}, con ejecución, integración y mantención para constructoras,
-            edificios, condominios y empresas. Hoy son {years} años de calendario desde ese inicio.
-          </p>
-        </div>
-      </section>
-
-      <section className="mt-10" aria-labelledby="equipo-titulo">
+      <section className="mt-8" aria-labelledby="equipo-titulo">
         <div className="hero-mesh relative overflow-hidden text-white">
           <div
             aria-hidden="true"
@@ -96,7 +77,7 @@ export default function NosotrosPage() {
             </div>
             <div>
               <p className="text-sm font-extrabold tracking-wide text-gold uppercase">
-                En terreno
+                {site.legalName}
               </p>
               <h2
                 id="equipo-titulo"
@@ -127,12 +108,8 @@ export default function NosotrosPage() {
             </div>
             <div>
               <p className="text-muted">
-                Además de los seis rubros de seguridad, PROTEF presta mantención preventiva y
-                correctiva de señales débiles para edificios, comunidades y condominios.
-              </p>
-              <p className="mt-3 text-muted">
-                El mismo material informa participación en más de 30 proyectos habitacionales y
-                comerciales, por contrato directo y por subcontrato.
+                Mantención preventiva y correctiva de señales débiles para edificios, comunidades y
+                condominios.
               </p>
             </div>
           </article>

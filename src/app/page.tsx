@@ -65,7 +65,7 @@ export default function HomePage() {
       <section className="container-protef pt-8">
         <p className="max-w-xl text-lg">
           Si el portón no abre, la cámara no graba o el cerco se apagó, llame. El personal técnico
-          calificado evalúa en terreno el incidente en {coverageLine()}.
+          evaluará su problemática, dando la mejor solución.
         </p>
         <Link
           href="/servicios"
@@ -253,7 +253,7 @@ export default function HomePage() {
                 id="mantencion-titulo"
                 className="mt-3 max-w-xl text-[clamp(1.8rem,3vw,2.6rem)] leading-tight font-extrabold text-nav"
               >
-                Mantención antes de la falla
+                Prevenga las fallas con una adecuada mantención
               </h2>
               <p className="mt-4 max-w-xl text-lg text-muted">
                 Una visita con fecha, antes de que el portón o la cámara dejen de funcionar. El

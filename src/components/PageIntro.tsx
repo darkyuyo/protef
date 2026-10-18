@@ -14,7 +14,7 @@ export function PageIntro({
   eyebrow,
 }: {
   title: string;
-  lead: string;
+  lead?: string;
   crumbs: Crumb[];
   image: Photo;
   imagePosition?: string;
@@ -47,9 +47,11 @@ export function PageIntro({
           </HeroTitle>
         </div>
       </header>
-      <div className="container-protef pt-8">
-        <p className="max-w-2xl text-lg">{lead}</p>
-      </div>
+      {lead ? (
+        <div className="container-protef pt-8">
+          <p className="max-w-2xl text-lg">{lead}</p>
+        </div>
+      ) : null}
     </>
   );
 }
