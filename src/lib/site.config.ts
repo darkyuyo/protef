@@ -251,14 +251,6 @@ export const plans: Plan[] = [
   },
 ];
 
-export const sectors = [
-  "Edificios habitacionales",
-  "Condominios",
-  "Proyectos inmobiliarios",
-  "Comunidades administradas",
-  "Empresas e industrias",
-] as const;
-
 export const mandantes = [
   "Aitue",
   "Novatec",

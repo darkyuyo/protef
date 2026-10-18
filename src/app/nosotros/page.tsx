@@ -10,7 +10,6 @@ import {
   coverageLine,
   edificios,
   pageMeta,
-  sectors,
   services,
   site,
   yearsOfExperience,
@@ -70,17 +69,6 @@ export default function NosotrosPage() {
             {site.foundingYear}, con ejecución, integración y mantención para constructoras,
             edificios, condominios y empresas. Hoy son {years} años de calendario desde ese inicio.
           </p>
-          <h3 className="mt-12 text-2xl font-extrabold text-nav">Dónde se usa el servicio</h3>
-          <ul className="mt-6 flex flex-wrap justify-center gap-2">
-            {sectors.map((sector) => (
-              <li
-                key={sector}
-                className="rounded-full bg-[#eef4fa] px-4 py-2 text-sm font-bold text-nav"
-              >
-                {sector}
-              </li>
-            ))}
-          </ul>
         </div>
       </section>
 
