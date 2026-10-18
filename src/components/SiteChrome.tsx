@@ -35,6 +35,7 @@ export function Header() {
   }, [open]);
 
   return (
+    <>
     <header className="surface-dark sticky top-0 z-40 border-b border-white/10 bg-nav text-white">
       <div className="container-protef flex items-center justify-between gap-3 py-3">
         <Link href="/" className="flex min-h-11 items-center gap-3">
@@ -66,22 +67,6 @@ export function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <a
-            href={site.phoneTel}
-            className="pulse-urgent inline-flex h-11 w-11 items-center justify-center rounded-full bg-gold text-nav"
-            aria-label={`Llamar ${site.phoneDisplay}`}
-          >
-            <Phone className="h-4 w-4" aria-hidden="true" />
-          </a>
-          <a
-            href={whatsappHref(defaultWhatsappText)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#075e54] text-white"
-            aria-label="Escribir por WhatsApp a PROTEF"
-          >
-            <WhatsAppIcon className="h-5 w-5" />
-          </a>
           <button
             type="button"
             className="inline-flex h-11 w-11 items-center justify-center rounded-[12px] border border-white/20 lg:hidden"
@@ -112,6 +97,25 @@ export function Header() {
         </nav>
       ) : null}
     </header>
+    <div className="fixed right-4 bottom-5 z-50 flex gap-2">
+      <a
+        href={site.phoneTel}
+        className="pulse-urgent inline-flex h-12 w-12 items-center justify-center rounded-full bg-gold text-nav shadow-[0_10px_24px_rgba(5,28,56,.28)]"
+        aria-label={`Llamar ${site.phoneDisplay}`}
+      >
+        <Phone className="h-5 w-5" aria-hidden="true" />
+      </a>
+      <a
+        href={whatsappHref(defaultWhatsappText)}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#075e54] text-white shadow-[0_10px_24px_rgba(5,28,56,.28)]"
+        aria-label="Escribir por WhatsApp a PROTEF"
+      >
+        <WhatsAppIcon className="h-6 w-6" />
+      </a>
+    </div>
+    </>
   );
 }
 
