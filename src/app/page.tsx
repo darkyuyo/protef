@@ -147,11 +147,17 @@ export default function HomePage() {
         />
       </figure>
 
-      <section className="bg-white/75 py-16" aria-labelledby="controles-inicio">
+      <section className="bg-white/75 py-10 md:py-14" aria-labelledby="controles-inicio">
         <div className="container-protef">
+          <h2
+            id="controles-inicio"
+            className="text-center text-[clamp(1.8rem,3vw,2.6rem)] leading-tight font-extrabold text-nav"
+          >
+            Venta y programación de controles remotos nuevos
+          </h2>
           <Link
             href="/reparacion-portones-automaticos-concepcion"
-            className="card block overflow-hidden transition duration-200 hover:-translate-y-1 hover:shadow-[0_16px_36px_rgba(5,28,56,.12)] lg:grid lg:grid-cols-[1.15fr_.85fr] lg:items-center"
+            className="card mt-8 block overflow-hidden transition duration-200 hover:-translate-y-1 hover:shadow-[0_16px_36px_rgba(5,28,56,.12)]"
           >
             <figure className="bg-[#eef4fa] p-4 md:p-6">
               <Image
@@ -159,18 +165,12 @@ export default function HomePage() {
                 alt="Catálogo de controles remotos nuevos para portones, de 2, 3 y 4 canales"
                 width={1400}
                 height={900}
-                sizes="(min-width: 1024px) 55vw, 94vw"
+                sizes="(min-width: 1024px) 70vw, 94vw"
                 className="h-auto w-full rounded-[12px]"
               />
             </figure>
-            <div className="border-t-8 border-gold p-6 md:p-8 lg:border-t-0 lg:border-l-8">
-              <h2
-                id="controles-inicio"
-                className="text-[clamp(1.5rem,2.4vw,2rem)] leading-tight font-extrabold text-nav"
-              >
-                Venta y programación de controles remotos nuevos
-              </h2>
-              <ul className="mt-5 grid gap-3">
+            <div className="border-t-8 border-gold p-6 md:p-8">
+              <ul className="grid gap-3">
                 <li className="flex gap-2 text-muted">
                   <span aria-hidden="true" className="font-bold text-brand-dark">
                     •
