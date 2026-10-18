@@ -43,7 +43,7 @@ export function CTA({
         </Link>
       </div>
       <p className="mt-4 text-sm text-muted">
-        Si el formulario no está disponible, llame o escriba por WhatsApp. El correo es{" "}
+        Si el formulario no está disponible, llámenos o escriba por WhatsApp. El correo es{" "}
         <a className="font-bold text-brand-dark" href={`mailto:${site.email}`}>
           {site.email}
         </a>

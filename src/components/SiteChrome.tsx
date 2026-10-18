@@ -13,7 +13,7 @@ export function UrgentStrip() {
       <p>
         Urgencia de lunes a viernes en Concepción.{" "}
         <a className="text-gold underline decoration-2 underline-offset-4" href={site.phoneTel}>
-          Llame al {site.phoneDisplay}
+          Llámenos al {site.phoneDisplay}
         </a>
       </p>
     </div>

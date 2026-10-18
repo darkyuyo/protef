@@ -19,7 +19,7 @@ export default function GraciasPage() {
           { name: "Solicitud enviada", path: "/gracias" },
         ]}
         title="Recibimos su solicitud"
-        lead="Vamos a revisar el mensaje en un día hábil. Si el portón, las cámaras o la alarma no pueden esperar, llame o escriba ahora."
+        lead="Vamos a revisar el mensaje en un día hábil. Si el portón, las cámaras o la alarma no pueden esperar, llámenos o escriba ahora."
       />
       <section className="bg-white/80">
         <div className="container-protef py-14 text-center">

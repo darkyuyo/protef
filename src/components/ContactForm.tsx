@@ -56,13 +56,13 @@ export function ContactForm({ preset }: { preset?: string }) {
       };
       if (!response.ok || !body.ok) {
         setFields(body.fieldErrors ?? {});
-        setFormError(body.error || "No pudimos enviar el mensaje. Llame o escriba por WhatsApp.");
+        setFormError(body.error || "No pudimos enviar el mensaje. Llámenos o escriba por WhatsApp.");
         setStatus("error");
         return;
       }
       router.push("/gracias");
     } catch {
-      setFormError("No pudimos enviar el mensaje. Llame o escriba por WhatsApp.");
+      setFormError("No pudimos enviar el mensaje. Llámenos o escriba por WhatsApp.");
       setStatus("error");
     }
   };

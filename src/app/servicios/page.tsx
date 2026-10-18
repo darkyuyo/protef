@@ -46,7 +46,7 @@ export default function ServiciosPage() {
       <section className="container-protef pb-12">
         <CTA
           title="¿El sistema falló hoy?"
-          text="Llame primero. WhatsApp es el segundo camino. El formulario queda para cotizaciones que pueden esperar el día hábil."
+          text="Llámenos primero. WhatsApp es el segundo camino. El formulario queda para cotizaciones que pueden esperar el día hábil."
           waText={defaultWhatsappText}
         />
         <p className="mt-6 text-sm text-muted">

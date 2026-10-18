@@ -64,7 +64,7 @@ export default function HomePage() {
 
       <section className="container-protef pt-8">
         <p className="max-w-xl text-lg">
-          Si el portón no abre, la cámara no graba o el cerco se apagó, llame. El personal técnico
+          Si el portón no abre, la cámara no graba o el cerco se apagó, llámenos. El personal técnico
           evaluará su problemática, dando la mejor solución.
         </p>
         <Link

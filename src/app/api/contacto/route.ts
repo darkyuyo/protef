@@ -33,7 +33,7 @@ function oneLine(value: string): string {
 export async function POST(request: Request) {
   if (limited(clientIp(request))) {
     return NextResponse.json(
-      { ok: false, error: "Demasiados envíos. Espere unos minutos o llame al teléfono." },
+      { ok: false, error: "Demasiados envíos. Espere unos minutos o llámenos al teléfono." },
       { status: 429 },
     );
   }
@@ -69,7 +69,7 @@ export async function POST(request: Request) {
       return NextResponse.json({ ok: true });
     }
     return NextResponse.json(
-      { ok: false, error: "El correo automático no está configurado. Llame o escriba por WhatsApp." },
+      { ok: false, error: "El correo automático no está configurado. Llámenos o escriba por WhatsApp." },
       { status: 503 },
     );
   }
@@ -93,7 +93,7 @@ export async function POST(request: Request) {
     });
   } catch {
     return NextResponse.json(
-      { ok: false, error: "No pudimos enviar el correo. Llame o escriba por WhatsApp." },
+      { ok: false, error: "No pudimos enviar el correo. Llámenos o escriba por WhatsApp." },
       { status: 502 },
     );
   }

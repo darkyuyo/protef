@@ -8,7 +8,7 @@ import { services, site } from "@/lib/site.config";
 export const metadata = buildMetadata({
   title: "Página no encontrada | PROTEF",
   description:
-    "Esa dirección no existe en PROTEF. Vuelva a los servicios de seguridad electrónica en Concepción o llame al +56 9 8210 9253. Urgencia en día hábil.",
+    "Esa dirección no existe en PROTEF. Vuelva a los servicios de seguridad electrónica en Concepción o llámenos al +56 9 8210 9253. Urgencia en día hábil.",
   path: "/404",
   noindex: true,
 });

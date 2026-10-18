@@ -319,7 +319,7 @@ export const pageMeta = {
     path: "/contacto",
     title: "Contacto y cotización en Concepción | PROTEF",
     description:
-      "Pida cotización o visita técnica en Concepción. Llame al +56 9 8210 9253, escriba por WhatsApp o envíe el formulario. Es día hábil. Por favor.",
+      "Pida cotización o visita técnica en Concepción. Llámenos al +56 9 8210 9253, escriba por WhatsApp o envíe el formulario. Es día hábil. Por favor.",
   },
   privacidad: {
     path: "/privacidad",
@@ -331,7 +331,7 @@ export const pageMeta = {
     path: "/gracias",
     title: "Solicitud enviada | PROTEF",
     description:
-      "Recibimos su solicitud de servicio técnico en Concepción. Si urge, llame al +56 9 8210 9253 o escriba por WhatsApp a PROTEF hoy mismo, gracias.",
+      "Recibimos su solicitud de servicio técnico en Concepción. Si urge, llámenos al +56 9 8210 9253 o escriba por WhatsApp a PROTEF hoy mismo, gracias.",
   },
 } as const;
 
