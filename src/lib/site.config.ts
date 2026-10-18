@@ -108,12 +108,12 @@ export const services: Service[] = [
     title: "Portones automáticos y barreras",
     cardLabel: "Portón automático",
     description:
-      "Instalación, reparación y mantención de portones correderos, batientes y barreras vehiculares, con motor, fotoceldas y control de acceso.",
+      "Reparación de portones correderos, batientes y barreras, y venta de controles remotos nuevos con programación en la central o el motor.",
     benefits: [
       "Portón trabado o a medias",
-      "Motor, cremallera y central",
-      "Fotoceldas y control remoto",
-      "Calibración y mantención",
+      "Venta de controles remotos nuevos",
+      "Programación en terreno",
+      "Fotoceldas y mantención",
     ],
     path: "/reparacion-portones-automaticos-concepcion",
     anchor: "Reparación de portones automáticos en Concepción",
@@ -297,13 +297,13 @@ export const pageMeta = {
     path: "/",
     title: "Seguridad electrónica en Concepción | PROTEF",
     description:
-      "Servicio técnico de seguridad electrónica en Concepción. CCTV, cercos SEC y portones. Urgencia de lunes a viernes. Llame al +56 9 8210 9253.",
+      "Seguridad electrónica en Concepción: CCTV, cercos SEC, portones y venta de controles remotos nuevos. Programación en terreno. Urgencias de lunes a viernes. +56 9 8210 9253.",
   },
   servicios: {
     path: "/servicios",
     title: "Servicios de seguridad electrónica en Concepción | PROTEF",
     description:
-      "CCTV, cercos eléctricos SEC, portones, citófonos, acceso biométrico y alarmas de incendio en Concepción. Vea los sistemas y llame al +56 9 8210 9253.",
+      "CCTV, cercos SEC, portones, venta de controles remotos, citófonos, acceso biométrico y alarmas en Concepción. Programación en terreno. +56 9 8210 9253.",
   },
   nosotros: {
     path: "/nosotros",

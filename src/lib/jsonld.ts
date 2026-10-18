@@ -23,7 +23,7 @@ export function businessGraph() {
         url: canonicalUrl("/"),
         logo: `${site.url}/icon-512.png`,
         image: `${site.url}/og-image.png`,
-        description: `Servicio técnico, reparación, instalación y mantención de CCTV, cercos eléctricos SEC, citófonos, portones, alarmas y control de accesos en Concepción y la Región del Biobío desde ${site.foundingYear}.`,
+        description: `Servicio técnico de CCTV, cercos eléctricos SEC, citófonos, portones y alarmas en Concepción desde ${site.foundingYear}. Venta y programación de controles remotos nuevos para portones automáticos, con entrega a domicilio.`,
         telephone: site.phoneE164,
         email: site.email,
         foundingDate: String(site.foundingYear),
@@ -49,6 +49,9 @@ export function businessGraph() {
           "Reparación de cámaras CCTV",
           "Reparación de cercos eléctricos SEC",
           "Reparación de portones automáticos",
+          "Venta de controles remotos para portones",
+          "Programación de controles remotos",
+          "Controles remotos nuevos de 2, 3 y 4 canales",
           "Reparación de citófonos y videoporteros",
           "Control de accesos biométrico",
           "Alarmas de incendio",
@@ -57,14 +60,26 @@ export function businessGraph() {
         hasOfferCatalog: {
           "@type": "OfferCatalog",
           name: "Servicios de seguridad electrónica",
-          itemListElement: services.map((service) => ({
-            "@type": "Offer",
-            itemOffered: {
-              "@type": "Service",
-              name: service.anchor,
-              areaServed: "Concepción",
+          itemListElement: [
+            ...services.map((service) => ({
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: service.anchor,
+                areaServed: "Concepción",
+              },
+            })),
+            {
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: "Venta y programación de controles remotos nuevos para portones",
+                description:
+                  "Controles remotos nuevos para portones correderos, batientes y barreras. Entrega a domicilio y programación en la central o el motor, en casas, condominios y comunidades. No se reparan controles usados.",
+                areaServed: "Concepción",
+              },
             },
-          })),
+          ],
         },
       },
     ],

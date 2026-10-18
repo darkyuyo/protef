@@ -201,15 +201,16 @@ export const landings: Landing[] = [
   {
     id: "portones",
     path: "/reparacion-portones-automaticos-concepcion",
-    title: "Reparación de portón automático en Concepción | PROTEF",
+    title: "Portones y controles remotos en Concepción | PROTEF",
     description:
-      "¿Portón trabado o motor que no responde en Concepción? PROTEF repara correderas, batientes y fotoceldas. Llame al +56 9 8210 9253. Hoy mismo.",
+      "Venta de controles remotos nuevos para portones en Concepción. Programación en la central, entrega a domicilio y reparación del portón. +56 9 8210 9253.",
     h1: "Reparación de portón automático en Concepción",
     eyebrow: "Acceso vehicular en días hábiles",
     lead: "Si el portón no abre, quedó a medias o el motor dejó de responder, el condominio se queda sin entrada o sin cierre. Reparamos portones correderos, batientes y barreras: motor, cremallera, fotoceldas y central. Los controles remotos se venden nuevos y se programan en terreno.",
     strip: "¿Portón trabado? Llame y coordinamos la visita de lunes a viernes.",
     waText: "Hola, necesito reparación urgente de portón automático en Concepción.",
-    serviceName: "Reparación urgente de portones automáticos en Concepción",
+    serviceName:
+      "Reparación de portones y venta de controles remotos nuevos en Concepción",
     failuresTitle: "Emergencias de portón que resolvemos",
     failuresIntro:
       "Atendemos condominios, empresas y casas cuando el acceso vehicular o peatonal queda bloqueado.",
