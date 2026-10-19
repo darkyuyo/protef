@@ -82,10 +82,6 @@ export const pagePhotos = {
 } as const satisfies Record<string, Photo>;
 
 export const homePhotos = {
-  edificio: {
-    src: "/fotos/fondo-edificio.jpg",
-    alt: "Edificio de departamentos con portón metálico y una cámara en el acceso",
-  },
   noche: {
     src: "/fotos/equipo-nocturno.jpg",
     alt: "Acceso de un condominio iluminado al anochecer, con portón y cámara",

@@ -137,16 +137,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      <figure className="relative h-56 overflow-hidden sm:h-72 md:h-96">
-        <Image
-          src={homePhotos.edificio.src}
-          alt={homePhotos.edificio.alt}
-          fill
-          sizes="100vw"
-          className="object-cover"
-        />
-      </figure>
-
       <section className="bg-white/75 py-10 md:py-14" aria-labelledby="controles-inicio">
         <div className="container-protef">
           <h2
