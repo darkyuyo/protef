@@ -41,6 +41,12 @@ const nextConfig: NextConfig = {
   async redirects() {
     const permanent = { statusCode: 301 as const };
     return [
+      {
+        source: "/:path*",
+        has: [{ type: "host" as const, value: "protef.vercel.app" }],
+        destination: "https://www.protef.cl/:path*",
+        ...permanent,
+      },
       { source: "/index.html", destination: "/", ...permanent },
       {
         source: "/reparacion-camaras-seguridad-cctv-concepcion.html",
