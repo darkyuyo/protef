@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Mail, MapPin, Menu, Phone, X } from "lucide-react";
+import { CreditCard, Mail, MapPin, Menu, Phone, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { BrandMark, WhatsAppIcon } from "@/components/icons";
 import { nav, site, whatsappHref, defaultWhatsappText } from "@/lib/site.config";
@@ -16,6 +16,29 @@ export function UrgentStrip() {
           Llámenos al {site.phoneDisplay}
         </a>
       </p>
+    </div>
+  );
+}
+
+export function PaymentBanner() {
+  const pathname = usePathname();
+  if (pathname === "/contacto") return null;
+  return (
+    <div className="border-b-4 border-nav bg-gold text-nav">
+      <div className="container-protef flex flex-col items-center justify-center gap-2 py-3 text-center sm:flex-row sm:gap-3">
+        <span className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-nav text-gold">
+          <CreditCard className="h-5 w-5" aria-hidden="true" />
+        </span>
+        <p className="text-base font-extrabold sm:text-lg">
+          ¡Pague con tarjeta de crédito!{" "}
+          <span className="font-semibold">
+            Le enviamos un link de pago de{" "}
+            <span className="rounded-md bg-nav px-2 py-0.5 font-extrabold whitespace-nowrap text-white">
+              Mercado Pago
+            </span>
+          </span>
+        </p>
+      </div>
     </div>
   );
 }

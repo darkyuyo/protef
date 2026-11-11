@@ -34,7 +34,7 @@ const inter = localFont({
   adjustFontFallback: "Arial",
 });
 import { JsonLd } from "@/components/JsonLd";
-import { Footer, Header, UrgentStrip } from "@/components/SiteChrome";
+import { Footer, Header, PaymentBanner, UrgentStrip } from "@/components/SiteChrome";
 import { TrackClicks } from "@/components/Analytics";
 import { businessGraph } from "@/lib/jsonld";
 import { pageMeta, site } from "@/lib/site.config";
@@ -80,6 +80,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <JsonLd data={businessGraph()} />
         <UrgentStrip />
         <Header />
+        <PaymentBanner />
         <main id="contenido">{children}</main>
         <Footer />
         <TrackClicks />
