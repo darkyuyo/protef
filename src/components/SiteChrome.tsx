@@ -30,9 +30,9 @@ export function PaymentBanner() {
           <CreditCard className="h-5 w-5" aria-hidden="true" />
         </span>
         <p className="text-base font-extrabold sm:text-lg">
-          ¡Pague con tarjeta de crédito!{" "}
+          Aceptamos transferencia bancaria y tarjetas de débito y crédito{" "}
           <span className="font-semibold">
-            Le enviamos un link de pago de{" "}
+            con link de pago de{" "}
             <span className="rounded-md bg-nav px-2 py-0.5 font-extrabold whitespace-nowrap text-white">
               Mercado Pago
             </span>
