@@ -30,7 +30,7 @@ export function PaymentBanner() {
           <CreditCard className="h-5 w-5" aria-hidden="true" />
         </span>
         <p className="text-base font-extrabold sm:text-lg">
-          Aceptamos transferencia bancaria y tarjetas de débito y crédito{" "}
+          Aceptamos transferencia bancaria, tarjetas de débito y crédito{" "}
           <span className="font-semibold">
             con link de pago de{" "}
             <span className="rounded-md bg-nav px-2 py-0.5 font-extrabold whitespace-nowrap text-white">
