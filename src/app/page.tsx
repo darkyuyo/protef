@@ -59,6 +59,9 @@ export default function HomePage() {
           <HeroTitle className="hero-item hero-d1 mt-4 max-w-3xl text-[clamp(1.65rem,3.2vw,2.5rem)] leading-[1.12] font-extrabold">
             Seguridad electrónica para edificios y condominios
           </HeroTitle>
+          <p className="hero-item hero-d1 mt-4 inline-flex w-fit rounded-[12px] bg-gold px-4 py-2 text-base font-extrabold text-nav sm:text-lg">
+            Servicio técnico y repuestos en Concepción, Talcahuano y San Pedro de la Paz
+          </p>
         </div>
       </section>
 

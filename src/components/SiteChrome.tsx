@@ -66,7 +66,7 @@ export function Header() {
           <span>
             <span className="block text-lg font-extrabold tracking-wide">PROTEF</span>
             <span className="block text-[0.7rem] font-bold uppercase tracking-wider text-brand">
-              Seguridad electrónica
+              Servicio técnico y repuestos
             </span>
           </span>
         </Link>
@@ -158,7 +158,8 @@ export function Footer() {
         <div>
           <BrandMark className="h-11 w-11" />
           <p className="mt-3 max-w-xs text-sm text-white/80">
-            Servicio técnico de seguridad electrónica en Concepción desde {site.foundingYear}.
+            Servicio técnico y repuestos de seguridad electrónica en Concepción, Talcahuano y San
+            Pedro de la Paz desde {site.foundingYear}.
             Urgencias de lunes a viernes.
           </p>
           <Link className="mt-3 inline-flex text-sm font-bold text-brand hover:text-gold" href="/privacidad">
